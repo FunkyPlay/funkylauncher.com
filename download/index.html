@@ -9,23 +9,34 @@
 <link rel="icon" href="../favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <style>
-:root { --bg: #07070d; --line: #24243a; --text: #fff; --muted: #b3b3c6; --pink: #ff3fd2; --cyan: #7ae8ff; }
+:root { --bg: #07070d; --text: #fff; --muted: #b3b3c6; --pink: #ff3fd2; --cyan: #7ae8ff; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--text);
-  font: 1.02rem/1.6 "Segoe UI", system-ui, sans-serif; padding: 1.5rem 16px; text-align: center; }
-img { width: 64px; height: 64px; margin-bottom: 1.2rem; }
-h1 { font: italic 800 1.9rem/1.1 "Bahnschrift", "Arial Narrow", sans-serif; text-transform: uppercase; margin-bottom: .8rem; }
+body { min-height: 100vh; display: grid; place-items: center; color: var(--text); font: 1.02rem/1.6 "Segoe UI", system-ui, sans-serif;
+  padding: 1.5rem 16px; text-align: center;
+  background:
+    radial-gradient(60vw 50vh at 100% 0%, rgba(255,63,210,.18), transparent 70%),
+    radial-gradient(50vw 50vh at 0% 100%, rgba(122,232,255,.13), transparent 70%),
+    repeating-linear-gradient(115deg, transparent 0 46px, rgba(255,63,210,.05) 46px 47px, transparent 47px 92px, rgba(122,232,255,.04) 92px 93px),
+    var(--bg); background-attachment: fixed; }
+main { max-width: 34rem; }
+img { width: 76px; height: 76px; margin-bottom: 1.4rem; filter: drop-shadow(0 0 26px rgba(255,63,210,.45)); }
+h1 { font: 700 clamp(2.2rem, 1.4rem + 4vw, 3.4rem)/1 "Bahnschrift", "Arial Narrow", sans-serif; font-stretch: 75%; font-variation-settings: "wdth" 75;
+  text-transform: uppercase; letter-spacing: .01em; transform: skewX(-9deg); margin-bottom: 1.1rem; }
+h1 span { background: linear-gradient(90deg, var(--pink), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
 p { color: var(--muted); margin: .4rem 0; }
-a { color: var(--cyan); }
-.btn { display: inline-block; margin: 1.2rem 0 .6rem; padding: .8rem 1.6rem; border-radius: 12px; background: var(--pink); color: #07070d;
-  font-weight: 700; text-decoration: none; box-shadow: 0 0 22px rgba(255,63,210,.35); }
+a { color: var(--cyan); text-underline-offset: 3px; }
+.btn { display: inline-block; margin: 1.5rem 0 .9rem; padding: 1rem 1.8rem; border-radius: 12px; background: var(--pink); color: #14000f;
+  font-weight: 800; letter-spacing: .02em; text-decoration: none; box-shadow: 0 10px 40px -10px rgba(255,63,210,.8); transition: transform .15s, box-shadow .15s; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 16px 50px -10px rgba(255,63,210,.9); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
 .small { font-size: .85rem; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
 </style>
 </head>
 <body>
 <main>
   <img src="../assets/icon.png" alt="Funky Launcher">
-  <h1>Загрузка началась</h1>
+  <h1>Загрузка <span>началась</span></h1>
   <p>Funky Launcher скачивается. Файл появится в папке «Загрузки».</p>
   <p lang="en" class="small">Your download has started. The file will appear in your Downloads folder.</p>
   <a class="btn" href="https://github.com/FunkyPlay/FunkyLauncher/releases/latest/download/FunkyLauncher.exe">Если загрузка не началась — нажмите здесь</a>
