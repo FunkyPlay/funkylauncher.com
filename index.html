@@ -7,6 +7,15 @@
 <meta name="description" data-a="meta.description" content="Funky Launcher сам проверяет игру, скачивает моды и ставит готовую сборку. Бесплатно, с открытым кодом. Игра не меняется.">
 <meta property="og:title" data-a="meta.og-title" content="Funky Launcher — моды для игр одной кнопкой">
 <meta property="og:description" data-a="meta.og-description" content="Готовые сборки модов ставятся одной кнопкой. Бесплатно, открытый код.">
+<meta name="x-en-description" data-a="meta.description-en" content="Funky Launcher checks your game, downloads the mods and installs a ready modlist by itself. Free and open source. Your game stays untouched.">
+<meta name="x-en-og-title" data-a="meta.og-title-en" content="Funky Launcher — game mods with one button">
+<meta name="x-en-og-description" data-a="meta.og-description-en" content="Ready modlists install with one button. Free, open source.">
+<link rel="canonical" href="https://funkylauncher.com/">
+<link rel="alternate" hreflang="ru" href="https://funkylauncher.com/">
+<link rel="alternate" hreflang="en" href="https://funkylauncher.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://funkylauncher.com/en/">
+<meta property="og:url" content="https://funkylauncher.com/">
+<meta property="og:locale" content="ru_RU">
 <meta property="og:image" content="https://funkylauncher.com/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -178,8 +187,8 @@ footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; o
       <a href="#tools"><span class="ru" data-e="nav.02">Инструменты</span><span class="en" data-e="nav.02">Tools</span></a>
       <a href="#pro">Pro</a>
       <a href="#faq">FAQ</a>
-      <a class="lang" href="#" id="lang">EN</a>
-      <a class="btn small" href="https://github.com/FunkyPlay/FunkyLauncher/releases/latest/download/FunkyLauncher.exe" data-h="download"><span class="ru" data-e="nav.03">Скачать</span><span class="en" data-e="nav.03">Download</span></a>
+      <a class="lang" href="/en/" hreflang="en" lang="en" id="lang">EN</a>
+      <a class="btn small" href="/download/" data-h="download"><span class="ru" data-e="nav.03">Скачать</span><span class="en" data-e="nav.03">Download</span></a>
     </nav>
   </div>
 </header>
@@ -191,7 +200,7 @@ footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; o
       <div class="kicker">FunkyPlay · <span class="ru" data-e="hero.01">моды · сборки · софт</span><span class="en" data-e="hero.01">mods · modlists · tools</span></div>
       <h1 class="head"><span class="ru" data-e="hero.02">Моды для игр —<br><span class="grad">одной кнопкой</span></span><span class="en" data-e="hero.02">Game mods —<br><span class="grad">one button</span></span></h1>
       <p class="lead"><span class="ru" data-e="hero.03">Funky Launcher сам проверит игру, скачает моды и поставит готовую сборку. Без «скачай, распакуй, вставь в папку». Сама игра не меняется — моды живут в отдельной папке.</span><span class="en" data-e="hero.03">Funky Launcher checks your game, downloads the mods and installs a ready modlist by itself. No "download, unpack, drop into the folder". Your game stays untouched — mods live in their own folder.</span></p>
-      <a class="btn" href="https://github.com/FunkyPlay/FunkyLauncher/releases/latest/download/FunkyLauncher.exe" data-h="download">⬇ <span class="ru" data-e="hero.04">Скачать бесплатно</span><span class="en" data-e="hero.04">Download free</span></a>
+      <a class="btn" href="/download/" data-h="download">⬇ <span class="ru" data-e="hero.04">Скачать бесплатно</span><span class="en" data-e="hero.04">Download free</span></a>
       <div class="note"><span class="ru" data-e="hero.05">Windows 10/11 · установка не нужна · открытый код</span><span class="en" data-e="hero.05">Windows 10/11 · no install · open source</span></div>
     </div>
     <div class="art"><div class="shot rv"><img src="assets/shot-hero.jpg" data-i="shot-hero" alt="Funky Launcher" width="1600" height="996"></div></div>
@@ -299,7 +308,7 @@ footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; o
   <section class="wrap final">
     <h2 class="head rv"><span class="ru" data-e="final.01">Хватит инструкций. <span class="grad">Играй</span></span><span class="en" data-e="final.01">Enough guides. <span class="grad">Play</span></span></h2>
     <p class="rv"><span class="ru" data-e="final.02">Скачай Funky Launcher и поставь первую сборку сегодня вечером.</span><span class="en" data-e="final.02">Download Funky Launcher and install your first modlist tonight.</span></p>
-    <a class="btn rv" href="https://github.com/FunkyPlay/FunkyLauncher/releases/latest/download/FunkyLauncher.exe" data-h="download">⬇ <span class="ru" data-e="final.03">Скачать бесплатно</span><span class="en" data-e="final.03">Download free</span></a>
+    <a class="btn rv" href="/download/" data-h="download">⬇ <span class="ru" data-e="final.03">Скачать бесплатно</span><span class="en" data-e="final.03">Download free</span></a>
   </section>
 </main>
 
@@ -322,20 +331,20 @@ footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; o
 
 <script>
 (function () {
-  var b = document.body, btn = document.getElementById('lang'),
-      tRu = document.title, tEn = document.documentElement.getAttribute('data-title-en') || tRu;
-  function set(l) {
-    b.setAttribute('data-lang', l);
-    document.documentElement.lang = l;
-    btn.textContent = l === 'ru' ? 'EN' : 'RU';
-    document.title = l === 'ru' ? tRu : tEn;
-    try { localStorage.setItem('fl-lang', l); } catch (e) {}
-  }
-  var q = new URLSearchParams(location.search).get('lang'), saved = null;
+  // language = page (/ is Russian, /en/ is English); the choice is remembered.
+  // Only the Russian page redirects: an /en/ link always opens in English.
+  var page = document.body.getAttribute('data-lang'), saved = null,
+      q = new URLSearchParams(location.search).get('lang');
   try { saved = localStorage.getItem('fl-lang'); } catch (e) {}
-  var nav = (navigator.language || 'ru').slice(0, 2);
-  set(q === 'en' || q === 'ru' ? q : saved || (['ru', 'uk', 'be', 'kk'].indexOf(nav) >= 0 ? 'ru' : 'en'));
-  btn.addEventListener('click', function (e) { e.preventDefault(); set(b.getAttribute('data-lang') === 'ru' ? 'en' : 'ru'); });
+  if (q === 'en' || q === 'ru') saved = q;
+  if (!saved && !/bot|crawl|spider|slurp|preview/i.test(navigator.userAgent)) {
+    var nav = (navigator.language || 'ru').slice(0, 2);
+    saved = ['ru', 'uk', 'be', 'kk'].indexOf(nav) >= 0 ? 'ru' : 'en';
+  }
+  if (page === 'ru' && saved === 'en') { location.replace((saved === 'en' ? '/en/' : '/') + location.hash); return; }
+  document.getElementById('lang').addEventListener('click', function () {
+    try { localStorage.setItem('fl-lang', page === 'ru' ? 'en' : 'ru'); } catch (e) {}
+  });
   var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
     es.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('on'); io.unobserve(x.target); } });
   }, { threshold: .12 }) : null;

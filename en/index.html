@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-a="meta.title-en@data-title-en" data-title-en="Funky Launcher — game mods with one button">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-e="meta.title">Funky Launcher — game mods with one button</title>
+<meta name="description" data-a="meta.description" content="Funky Launcher checks your game, downloads the mods and installs a ready modlist by itself. Free and open source. Your game stays untouched.">
+<meta property="og:title" data-a="meta.og-title" content="Funky Launcher — game mods with one button">
+<meta property="og:description" data-a="meta.og-description" content="Ready modlists install with one button. Free, open source.">
+<link rel="canonical" href="https://funkylauncher.com/en/">
+<link rel="alternate" hreflang="ru" href="https://funkylauncher.com/">
+<link rel="alternate" hreflang="en" href="https://funkylauncher.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://funkylauncher.com/en/">
+<meta property="og:url" content="https://funkylauncher.com/en/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://funkylauncher.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#07070d">
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700;1,800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #07070d; --bg2: #0e0e18; --card: #14141f; --line: #24243a;
+  --text: #ffffff; --muted: #b3b3c6; --pink: #ff3fd2; --cyan: #7ae8ff;
+  --grad: linear-gradient(95deg, var(--pink), var(--cyan));
+  --head: "Bahnschrift", "Barlow Condensed", "Arial Narrow", sans-serif;
+  --step-hero: clamp(2.8rem, 1.2rem + 7vw, 7.2rem);
+  --step-h2: clamp(2rem, 1.2rem + 3vw, 3.6rem);
+  --step-body: clamp(1rem, .95rem + .25vw, 1.15rem);
+  --space: clamp(2.6rem, 1.8rem + 3.2vw, 5rem);
+  --ease: cubic-bezier(.16, 1, .3, 1);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font: var(--step-body)/1.6 "Segoe UI", system-ui, -apple-system, sans-serif; overflow-x: hidden; }
+main { overflow-x: clip; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--cyan); }
+.wrap { max-width: 1160px; margin: 0 auto; padding-inline: clamp(1rem, 4vw, 2rem); }
+section { padding-block: var(--space); position: relative; scroll-margin-top: 40px; }
+.head { font-family: var(--head); font-weight: 800; font-style: italic; font-stretch: 75%; text-transform: uppercase; letter-spacing: -.01em; }
+h1 { font-size: var(--step-hero); line-height: .92; }
+h2 { font-size: var(--step-h2); line-height: 1; margin-bottom: 1.2rem; }
+h3 { font-size: 1.25rem; margin-bottom: .4rem; }
+p { max-width: 62ch; color: var(--muted); }
+.grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; padding: .14em .16em .06em 0; margin-right: -.16em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.kicker { font-family: var(--head); font-style: italic; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pink); font-size: .95rem; margin-bottom: 1rem; }
+
+/* background: thin slanted lines + glow, no city, no game */
+.bg { position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 95% -10%, rgba(255,63,210,.16), transparent 60%),
+    radial-gradient(50rem 40rem at -10% 110%, rgba(122,232,255,.10), transparent 60%),
+    repeating-linear-gradient(115deg, transparent 0 90px, rgba(255,63,210,.05) 90px 91px, transparent 91px 180px, rgba(122,232,255,.04) 180px 181px),
+    var(--bg); }
+
+/* header */
+header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); background: rgba(7,7,13,.72); border-bottom: 1px solid rgba(255,255,255,.06); }
+.bar { display: flex; align-items: center; gap: 1.2rem; height: 68px; }
+.logo { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
+.logo img.i { width: 38px; height: 38px; }
+.logo img.w { height: 30px; width: auto; }
+nav { margin-left: auto; display: flex; gap: 1.4rem; align-items: center; }
+nav a { color: var(--muted); text-decoration: none; font-size: .95rem; transition: color .2s var(--ease); }
+nav a:hover { color: var(--text); }
+.lang { border: 1px solid var(--line); border-radius: 8px; padding: .3rem .6rem; color: var(--text) !important; font-weight: 600; }
+@media (max-width: 760px) { nav a:not(.lang):not(.btn) { display: none; } .logo img.w { display: none; } }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; gap: .6rem; padding: 1.05rem 2rem; border-radius: 12px; background: var(--pink); color: #14000f; font-weight: 800; text-decoration: none; letter-spacing: .02em;
+  box-shadow: 0 10px 40px -10px rgba(255,63,210,.7); transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 16px 50px -10px rgba(255,63,210,.9); }
+.btn:active { transform: translateY(0); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+.btn.small { padding: .55rem 1.1rem; font-size: .9rem; box-shadow: none; }
+.ghost { display: inline-flex; padding: 1rem 1.6rem; border-radius: 12px; border: 1px solid var(--line); color: var(--text); text-decoration: none; transition: border-color .2s var(--ease); }
+.ghost:hover { border-color: var(--cyan); }
+.note { font-size: .88rem; color: var(--muted); margin-top: 1rem; }
+
+/* hero */
+.hero { padding-top: clamp(2.5rem, 2rem + 4vw, 5.5rem); display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+.hero p.lead { font-size: clamp(1.1rem, 1rem + .4vw, 1.3rem); margin: 1.6rem 0 2.2rem; color: #d6d6e4; }
+.art { position: relative; }
+.art::before { content: ""; position: absolute; left: 6%; top: -35%; height: 170%; width: 46%; transform: skewX(-18deg); background: linear-gradient(180deg, rgba(255,63,210,.16), rgba(122,232,255,.08)); border-left: 4px solid var(--pink); box-shadow: -8px 0 40px rgba(255,63,210,.5); pointer-events: none; }
+.shot { position: relative; width: 158%; transform-origin: left center; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,63,210,.5); box-shadow: 0 0 0 1px rgba(122,232,255,.15), 0 40px 90px -30px rgba(255,63,210,.55); transform: perspective(1400px) rotateY(-9deg) rotateX(3deg); transition: transform .6s var(--ease); }
+.shot:hover { transform: perspective(1400px) rotateY(-3deg) rotateX(1deg); }
+@media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .shot { transform: none; width: 100%; } .shot:hover { transform: none; } .art::before { display: none; } }
+
+/* pain vs us */
+.vs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2.5rem; }
+.vs > div { border-radius: 16px; padding: 1.8rem; background: var(--card); border: 1px solid var(--line); }
+.vs .us { border-color: rgba(255,63,210,.55); background: linear-gradient(160deg, rgba(255,63,210,.10), var(--card) 55%); }
+.vs ol { margin: 1rem 0 0 1.2rem; color: var(--muted); }
+.vs ol li { margin: .25rem 0; }
+.vs .us ol { color: var(--text); }
+@media (max-width: 760px) { .vs { grid-template-columns: 1fr; } }
+
+/* modlists */
+.lists { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1.2rem; margin-top: 2.5rem; }
+.ml { border-radius: 16px; padding: 1.6rem; background: var(--card); border: 1px solid var(--line); display: flex; flex-direction: column; gap: .5rem; min-height: 210px; }
+.ml { overflow: hidden; }
+.ml img.pic { width: calc(100% + 3.2rem); max-width: none; height: 150px; object-fit: cover; object-position: right center; margin: -1.6rem -1.6rem .5rem; }
+.ml.main { border-color: rgba(255,63,210,.55); }
+.ml.main .chip { background: rgba(255,63,210,.14); color: var(--pink); }
+.chip { align-self: flex-start; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .25rem .6rem; border-radius: 6px; background: rgba(122,232,255,.12); color: var(--cyan); }
+.chip.soon { background: rgba(255,255,255,.06); color: var(--muted); }
+.ml .t { font-family: var(--head); font-style: italic; font-weight: 800; font-size: 2rem; text-transform: uppercase; line-height: 1; }
+.ml p { font-size: .95rem; }
+@media (max-width: 900px) { .lists { grid-template-columns: 1fr; } }
+
+/* tools */
+.tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.2rem 1.6rem; margin-top: 3rem; }
+.tool { border-left: 2px solid var(--line); padding-left: 1.1rem; transition: border-color .3s var(--ease); }
+.tool:hover { border-color: var(--pink); }
+.tool .ic { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; margin-bottom: .8rem; color: var(--bg); background: var(--pink); }
+.tool .ic.c { background: var(--cyan); }
+.tool .ic.t2 { background: #dc71e2; }
+.tool .ic.t3 { background: #b9a2f2; }
+.tool .ic.t4 { background: #9ac5f8; }
+.tool .ic.g { background: linear-gradient(135deg, var(--pink), var(--cyan)); }
+.tool .ic svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.tool .ic svg .f { fill: currentColor; stroke: none; }
+.tool p { font-size: .95rem; }
+.tool .chip { margin-top: .6rem; }
+@media (max-width: 900px) { .tools { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .tools { grid-template-columns: 1fr; } }
+.wide { margin-top: 3.5rem; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); border-bottom: 0; -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent); mask-image: linear-gradient(180deg, #000 72%, transparent); }
+
+/* trust */
+.trust { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
+.trust div { padding: 1.3rem; border-radius: 14px; background: var(--bg2); border: 1px solid var(--line); }
+.trust b { display: block; color: var(--text); margin-bottom: .3rem; }
+.trust span { color: var(--muted); font-size: .92rem; }
+@media (max-width: 900px) { .trust { grid-template-columns: 1fr 1fr; } }
+
+/* pro */
+.pro { border-radius: 22px; padding: clamp(1.8rem, 4vw, 3.4rem); background: radial-gradient(40rem 20rem at 100% 0, rgba(255,63,210,.18), transparent 70%), var(--card); border: 1px solid rgba(255,63,210,.4); display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; }
+.pro ul { list-style: none; display: grid; gap: .6rem; }
+.pro li { padding-left: 1.6rem; position: relative; color: #dcdcea; }
+.pro li::before { content: "✦"; position: absolute; left: 0; color: var(--pink); }
+@media (max-width: 900px) { .pro { grid-template-columns: 1fr; } }
+
+/* faq */
+details { border-bottom: 1px solid var(--line); padding: 1.2rem 0; }
+summary { cursor: pointer; font-weight: 700; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+summary::after { content: "+"; color: var(--pink); font-size: 1.4rem; line-height: 1; transition: transform .3s var(--ease); }
+details[open] summary::after { transform: rotate(45deg); }
+details p { margin-top: .8rem; }
+
+/* final + footer */
+.final { text-align: center; }
+.final p { margin: 1.2rem auto 2.2rem; }
+footer { border-top: 1px solid var(--line); padding: 2.5rem 0 3rem; color: var(--muted); font-size: .9rem; }
+footer .row { display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; }
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--text); }
+footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; opacity: .7; }
+
+/* language */
+[data-lang="en"] .ru, [data-lang="ru"] .en { display: none !important; }
+
+/* reveal */
+.rv { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.rv.on { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; } .shot, .btn { transition: none; } }
+</style>
+</head>
+<body data-lang="en">
+<div class="bg"></div>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="Funky Launcher"><img class="i" src="../assets/icon.png" alt=""><img class="w" src="../assets/wordmark.png" alt="Funky Launcher"></a>
+    <nav>
+      <a href="#how"><span class="en" data-e="nav.01">How it works</span></a>
+      <a href="#tools"><span class="en" data-e="nav.02">Tools</span></a>
+      <a href="#pro">Pro</a>
+      <a href="#faq">FAQ</a>
+      <a class="lang" href="/" hreflang="ru" lang="ru" id="lang">RU</a>
+      <a class="btn small" href="/en/download/" data-h="download"><span class="en" data-e="nav.03">Download</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- 1. promise -->
+  <section class="wrap hero">
+    <div>
+      <div class="kicker">FunkyPlay · <span class="en" data-e="hero.01">mods · modlists · tools</span></div>
+      <h1 class="head"><span class="en" data-e="hero.02">Game mods —<br><span class="grad">one button</span></span></h1>
+      <p class="lead"><span class="en" data-e="hero.03">Funky Launcher checks your game, downloads the mods and installs a ready modlist by itself. No "download, unpack, drop into the folder". Your game stays untouched — mods live in their own folder.</span></p>
+      <a class="btn" href="/en/download/" data-h="download">⬇ <span class="en" data-e="hero.04">Download free</span></a>
+      <div class="note"><span class="en" data-e="hero.05">Windows 10/11 · no install · open source</span></div>
+    </div>
+    <div class="art"><div class="shot rv"><img src="../assets/shot-hero.jpg" data-i="shot-hero" alt="Funky Launcher" width="1600" height="996"></div></div>
+  </section>
+
+  <!-- 2. pain → 3. solution -->
+  <section class="wrap" id="how">
+    <div class="kicker rv"><span class="en" data-e="how.01">How it works</span></div>
+    <h2 class="head rv"><span class="en" data-e="how.02">An evening of guides <span class="grad">or one button</span></span></h2>
+    <div class="vs">
+      <div class="rv">
+        <h3><span class="en" data-e="how.03">The usual way</span></h3>
+        
+        <ol class="en" data-e="how.04"><li>Find hundreds of mods and the right versions</li><li>Download, unpack, drop into the game folder</li><li>Get the "mod for the mod"</li><li>Install and set up a mod manager</li><li>The game won't start — hunt for what broke</li></ol>
+      </div>
+      <div class="us rv">
+        <h3>Funky Launcher</h3>
+        
+        <ol class="en" data-e="how.05"><li>Download the launcher</li><li>Pick a modlist in the library</li><li>Press Install — the launcher checks the game and sets everything up</li><li>Press Play</li></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- modlists -->
+  <section class="wrap" id="lists">
+    <div class="kicker rv"><span class="en" data-e="lists.01">Modlists</span></div>
+    <h2 class="head rv"><span class="en" data-e="lists.02">Different games. <span class="grad">One launcher</span></span></h2>
+    <div class="lists">
+      <div class="ml main rv">
+        <img class="pic" src="../assets/list-neon.jpg" data-i="list-neon" alt="" width="900" height="400" loading="lazy">
+        <span class="chip"><span class="en" data-e="lists.03">Available</span></span>
+        <div class="t">Neon Nights</div>
+        <p><span class="en" data-e="lists.04">Cyberpunk 2077 2.5 + Phantom Liberty. 400+ mods: visuals and weather, a livelier city, apartments, cars, outfits, romances. Configured and tested.</span></p>
+      </div>
+      <div class="ml rv">
+        <img class="pic" src="../assets/list-starfield.jpg" data-i="list-starfield" alt="" width="900" height="400" loading="lazy">
+        <span class="chip soon"><span class="en" data-e="lists.05">In progress</span></span>
+        <div class="t">Starfield</div>
+        <p><span class="en" data-e="lists.06">The next modlist.</span></p>
+      </div>
+      <div class="ml rv">
+        <img class="pic" src="../assets/list-next.jpg" data-i="list-next" alt="" width="900" height="400" loading="lazy">
+        <span class="chip soon"><span class="en" data-e="lists.07">Planned</span></span>
+        <div class="t">The Witcher 3 · RDR2</div>
+        <p><span class="en" data-e="lists.08">Which game is next — we decide together on <a href="https://t.me/FunkyPlayTV">Telegram</a>.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- tools -->
+  <section class="wrap" id="tools">
+    <div class="kicker rv"><span class="en" data-e="tools.01">Tools</span></div>
+    <h2 class="head rv"><span class="en" data-e="tools.02">Not just mods. <span class="grad">Free</span></span></h2>
+    <div class="tools">
+      <div class="tool rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12a7 7 0 1 1-2.2-5.1"/><path d="M19.5 3.5v4.2h-4.2"/></svg></div><h3><span class="en" data-e="tools.03">Save backup</span></h3><p><span class="en" data-e="tools.04">A copy of your saves before every launch, restored in one click.</span></p></div>
+      <div class="tool rv"><div class="ic t3"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M13.5 2 5 13.5h5.2L9 22l9-12h-5.4z"/></svg></div><h3><span class="en" data-e="tools.05">Game mode</span></h3><p><span class="en" data-e="tools.06">Closes the browser, torrents and the rest while you play, starts them again after.</span></p></div>
+      <div class="tool rv"><div class="ic t4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17.5 19.5 7"/></svg></div><h3><span class="en" data-e="tools.07">Can my PC run it?</span></h3><p><span class="en" data-e="tools.08">A PC check before installing: will it run, on what settings and what to fix.</span></p></div>
+      <div class="tool rv"><div class="ic t2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><circle class="f" cx="12" cy="12" r="3.6"/></svg></div><h3><span class="en" data-e="tools.09">Recording mode</span></h3><p><span class="en" data-e="tools.10">A clean desktop for recording and streaming in one click.</span></p></div>
+      <div class="tool rv"><div class="ic c"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M7 4.5 19 12 7 19.5z"/></svg></div><h3>Funky <span class="en" data-e="tools.11">Player</span></h3><p><span class="en" data-e="tools.12">Any video frame by frame: save a frame, cut a clip from your recording.</span></p><span class="chip soon"><span class="en" data-e="tools.13">Soon</span></span></div>
+      <div class="tool rv"><div class="ic g"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="3.2"/><path d="M6.2 6.2l3.5 3.5M14.3 14.3l3.5 3.5M17.8 6.2l-3.5 3.5M9.7 14.3l-3.5 3.5"/></svg></div><h3>Funky <span class="en" data-e="tools.14">Help</span></h3><p><span class="en" data-e="tools.15">Not installing? Give access with one button and we fix it. Only while the window is open.</span></p><span class="chip soon"><span class="en" data-e="tools.16">Soon</span></span></div>
+    </div>
+    <div class="wide rv"><img src="../assets/shot-tools-crop.jpg" data-i="shot-tools" alt="Funky Launcher — tools" width="1600" height="572" loading="lazy"></div>
+  </section>
+
+  <!-- 4–5. proof / why -->
+  <section class="wrap">
+    <div class="kicker rv"><span class="en" data-e="trust.01">Why you can trust it</span></div>
+    <h2 class="head rv"><span class="en" data-e="trust.02">Honest and <span class="grad">open</span></span></h2>
+    <div class="trust">
+      <div class="rv"><b><span class="en" data-e="trust.03">Open source</span></b><span><span class="en" data-e="trust.04">The whole launcher is on GitHub, the exe is built from source by GitHub.</span></span></div>
+      <div class="rv"><b><span class="en" data-e="trust.05">Mods from Nexus</span></b><span><span class="en" data-e="trust.06">Downloaded from the authors' pages — nothing is re-uploaded.</span></span></div>
+      <div class="rv"><b><span class="en" data-e="trust.07">Game untouched</span></b><span><span class="en" data-e="trust.08">Mods live in their own folder, going back to vanilla is easy.</span></span></div>
+      <div class="rv"><b><span class="en" data-e="trust.09">No data collected</span></b><span><span class="en" data-e="trust.10">The launcher sends no data about you or your PC.</span></span></div>
+    </div>
+  </section>
+
+  <!-- 6. offer: Pro -->
+  <section class="wrap" id="pro">
+    <div class="pro rv">
+      <div>
+        <div class="kicker">Funky Pro · <span class="en" data-e="pro.01">soon</span></div>
+        <h2 class="head"><span class="en" data-e="pro.02">More comfort — <span class="grad">for regulars</span></span></h2>
+        <p><span class="en" data-e="pro.03">Modlists, installs and support are always free. Pro adds extra launcher features and supports the project. Pricing comes with the launch.</span></p>
+      </div>
+      
+      <ul class="en" data-e="pro.04"><li>Cloud save backup to your own Google Drive, OneDrive or Yandex Disk</li><li>Backups while playing and playthrough slots</li><li>Hotkey and automation for recording mode</li><li>Your own desktops with their own icons</li><li>Auto vertical clips for Shorts and TikTok</li></ul>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="wrap" id="faq">
+    <div class="kicker rv">FAQ</div>
+    <h2 class="head rv"><span class="en" data-e="faq.01">Frequently <span class="grad">asked</span></span></h2>
+    <div class="rv">
+      <details><summary><span class="en" data-e="faq.02">Is it really free?</span></summary><p><span class="en" data-e="faq.03">Yes. The launcher, modlists and support are free. Only Pro with extra tools will be paid — everything works without it.</span></p></details>
+      <details><summary><span class="en" data-e="faq.04">Do I need Nexus Premium?</span></summary><p><span class="en" data-e="faq.05">No. A free Nexus Mods account works: press "Slow download" for each mod, it takes longer. With Premium everything downloads by itself.</span></p></details>
+      <details><summary><span class="en" data-e="faq.06">Windows says "Unknown publisher". Is it safe?</span></summary><p><span class="en" data-e="faq.07">The launcher isn't code-signed yet. The code is open on GitHub, the file is built from it by GitHub and has a checksum. Click "More info" → "Run anyway".</span></p></details>
+      <details><summary><span class="en" data-e="faq.08">Will my game be changed?</span></summary><p><span class="en" data-e="faq.09">No. The modlist goes into its own folder and runs from there. Your normal game stays as it was.</span></p></details>
+      <details><summary><span class="en" data-e="faq.10">What if it doesn't start?</span></summary><p><span class="en" data-e="faq.11">Press "Collect error report" in the launcher and send it to <a href="https://t.me/FunkyLauncherBot">@FunkyLauncherBot</a> — we'll sort it out.</span></p></details>
+      <details><summary><span class="en" data-e="faq.12">Which games are next?</span></summary><p><span class="en" data-e="faq.13">Starfield is in progress, The Witcher 3 and RDR2 are planned. Vote for the next game on Telegram <a href="https://t.me/FunkyPlayTV">@FunkyPlayTV</a>.</span></p></details>
+    </div>
+  </section>
+
+  <!-- 8. final -->
+  <section class="wrap final">
+    <h2 class="head rv"><span class="en" data-e="final.01">Enough guides. <span class="grad">Play</span></span></h2>
+    <p class="rv"><span class="en" data-e="final.02">Download Funky Launcher and install your first modlist tonight.</span></p>
+    <a class="btn rv" href="/en/download/" data-h="download">⬇ <span class="en" data-e="final.03">Download free</span></a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <div>© 2026 FunkyPlay · Funky Launcher · GPL-3.0</div>
+    <div style="display:flex;gap:1.4rem;flex-wrap:wrap">
+      <a href="https://github.com/FunkyPlay/FunkyLauncher" data-h="github">GitHub</a>
+      <a href="https://t.me/FunkyPlayTV" data-h="telegram">Telegram</a>
+      <a href="https://t.me/FunkyLauncher"><span class="en">Launcher news</span></a>
+      <a href="https://www.youtube.com/@FunkyPlayTV" data-h="youtube">YouTube</a>
+      <a href="https://t.me/FunkyLauncherBot" data-h="support"><span class="en" data-e="footer.01">Support</span></a>
+      <a href="mailto:support@funkylauncher.com">support@funkylauncher.com</a>
+      <a href="mailto:ads@funkylauncher.com"><span class="en">Partnerships</span></a>
+      <a href="../legal.html"><span class="en" data-e="footer.02">Legal</span></a>
+    </div>
+  </div>
+  <p class="wrap unofficial"><span class="en">Funky Launcher is an independent, unofficial project. It is not affiliated with or endorsed by any game publisher or developer, Nexus Mods or Wabbajack. All game names and trademarks belong to their respective owners.</span></p>
+</footer>
+
+<script>
+(function () {
+  // language = page (/ is Russian, /en/ is English); the choice is remembered.
+  // Only the Russian page redirects: an /en/ link always opens in English.
+  var page = document.body.getAttribute('data-lang'), saved = null,
+      q = new URLSearchParams(location.search).get('lang');
+  try { saved = localStorage.getItem('fl-lang'); } catch (e) {}
+  if (q === 'en' || q === 'ru') saved = q;
+  if (!saved && !/bot|crawl|spider|slurp|preview/i.test(navigator.userAgent)) {
+    var nav = (navigator.language || 'ru').slice(0, 2);
+    saved = ['ru', 'uk', 'be', 'kk'].indexOf(nav) >= 0 ? 'ru' : 'en';
+  }
+  if (page === 'ru' && saved === 'en') { location.replace((saved === 'en' ? '/en/' : '/') + location.hash); return; }
+  document.getElementById('lang').addEventListener('click', function () {
+    try { localStorage.setItem('fl-lang', page === 'ru' ? 'en' : 'ru'); } catch (e) {}
+  });
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('on'); io.unobserve(x.target); } });
+  }, { threshold: .12 }) : null;
+  document.querySelectorAll('.rv').forEach(function (el) { io ? io.observe(el) : el.classList.add('on'); });
+})();
+</script>
+</body>
+</html>
