@@ -104,7 +104,7 @@ nav a:hover { color: var(--text); }
 @media (max-width: 760px) { .vs { grid-template-columns: 1fr; } }
 
 /* modlists */
-.lists { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1.2rem; margin-top: 2.5rem; }
+.lists { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.5rem; }
 .ml { border-radius: 16px; padding: 1.6rem; background: var(--card); border: 1px solid var(--line); display: flex; flex-direction: column; gap: .5rem; min-height: 210px; }
 .ml { overflow: hidden; }
 .ml img.pic { width: calc(100% + 3.2rem); max-width: none; height: 150px; object-fit: cover; object-position: right center; margin: -1.6rem -1.6rem .5rem; }
@@ -114,6 +114,12 @@ nav a:hover { color: var(--text); }
 .chip.soon { background: rgba(255,255,255,.06); color: var(--muted); }
 .ml .t { font-family: var(--head); font-style: italic; font-weight: 800; font-size: 2rem; text-transform: uppercase; line-height: 1; }
 .ml p { font-size: .95rem; }
+.ml > .ru:last-child, .ml > .en:last-child { margin-top: auto; padding-top: .4rem; }
+.ml .more { font-weight: 700; text-decoration: none; color: var(--cyan); }
+.ml .more:hover { text-decoration: underline; }
+.ml.next { grid-column: 1 / -1; min-height: 0; flex-direction: row; flex-wrap: wrap; align-items: center; gap: .5rem 1.2rem; }
+.ml.next .t { font-size: 1.5rem; }
+.ml.next p { flex: 1 1 22rem; margin: 0; }
 @media (max-width: 900px) { .lists { grid-template-columns: 1fr; } }
 
 /* tools */
@@ -230,19 +236,27 @@ footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; o
         <img class="pic" src="../assets/list-neon.jpg" data-i="list-neon" alt="" width="900" height="400" loading="lazy">
         <span class="chip"><span class="en" data-e="lists.03">Available</span></span>
         <div class="t">Neon Nights</div>
-        <p><span class="en" data-e="lists.04">Cyberpunk 2077 2.5 + Phantom Liberty. 400+ mods: visuals and weather, a livelier city, apartments, cars, outfits, romances. Configured and tested.</span></p>
+        <p><span class="en" data-e="lists.04">Cyberpunk 2077 2.5 + Phantom Liberty. 400+ mods: new visuals and weather, a livelier Night City, apartments, hundreds of outfits, romances and cars. Russian or English modlist version.</span></p>
+        <span class="en"><a class="more" href="/en/neon-nights/">About the modlist →</a></span>
       </div>
       <div class="ml rv">
         <img class="pic" src="../assets/list-starfield.jpg" data-i="list-starfield" alt="" width="900" height="400" loading="lazy">
-        <span class="chip soon"><span class="en" data-e="lists.05">In progress</span></span>
-        <div class="t">Starfield</div>
-        <p><span class="en" data-e="lists.06">The next modlist.</span></p>
+        <span class="chip"><span class="en" data-e="lists.03">Available</span></span>
+        <div class="t">Nova Nights</div>
+        <p><span class="en" data-e="lists.06">Starfield 1.16.244 + Shattered Space. 380+ mods: a handier interface, ship building, outposts, livelier cities, smarter enemies, a fresh look.</span></p>
+        <span class="en"><a class="more" href="/en/nova-nights/">About the modlist →</a></span>
       </div>
       <div class="ml rv">
-        <img class="pic" src="../assets/list-next.jpg" data-i="list-next" alt="" width="900" height="400" loading="lazy">
-        <span class="chip soon"><span class="en" data-e="lists.07">Planned</span></span>
-        <div class="t">The Witcher 3 · RDR2</div>
-        <p><span class="en" data-e="lists.08">Which game is next — we decide together with the community.</span></p>
+        <img class="pic" src="../assets/list-atomic.jpg" data-i="list-atomic" alt="" width="900" height="400" loading="lazy">
+        <span class="chip"><span class="en" data-e="lists.03">Available</span></span>
+        <div class="t">Atomic Nights</div>
+        <p><span class="en" data-e="lists.09">Fallout 4 1.11.240 + all 6 DLC. 180+ "vanilla+" mods: more beautiful, stable and handy. A new interface, settlements, quests and locations.</span></p>
+        <span class="en"><a class="more" href="/en/atomic-nights/">About the modlist →</a></span>
+      </div>
+      <div class="ml next rv">
+        <span class="chip soon"><span class="en" data-e="lists.05">In progress</span></span>
+        <div class="t">GTA V Enhanced</div>
+        <p><span class="en" data-e="lists.08">The next modlist. Which game comes after it — we decide together with the community.</span></p>
       </div>
     </div>
   </section>
@@ -269,7 +283,7 @@ footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; o
     <div class="trust">
       <div class="rv"><b><span class="en" data-e="trust.03">Open source</span></b><span><span class="en" data-e="trust.04">The whole launcher is on GitHub, and the .exe is built from that source code on GitHub's servers.</span></span></div>
       <div class="rv"><b><span class="en" data-e="trust.05">Mods from Nexus</span></b><span><span class="en" data-e="trust.06">Downloaded from the authors' pages — nothing is re-uploaded.</span></span></div>
-      <div class="rv"><b><span class="en" data-e="trust.07">Clean game in one click</span></b><span><span class="en" data-e="trust.08">Mods live in their own folder; only 6 small loader files go into the game folder, and "Restore clean game" removes them.</span></span></div>
+      <div class="rv"><b><span class="en" data-e="trust.07">Clean game in one click</span></b><span><span class="en" data-e="trust.08">Mods live in their own folder; only a few small loader files (2–6, depending on the game) go into the game folder, and "Restore clean game" removes them.</span></span></div>
       <div class="rv"><b><span class="en" data-e="trust.09">No data collected</span></b><span><span class="en" data-e="trust.10">The launcher sends no data about you or your PC.</span></span></div>
     </div>
   </section>
@@ -295,9 +309,9 @@ footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; o
       <details><summary><span class="en" data-e="faq.02">Is it really free?</span></summary><p><span class="en" data-e="faq.03">Yes. The launcher, modlists and support are free. Only Pro, with its extra tools, will be paid — everything works without it.</span></p></details>
       <details><summary><span class="en" data-e="faq.04">Do I need Nexus Premium?</span></summary><p><span class="en" data-e="faq.05">No. A free Nexus Mods account works — you press "Slow download" for each mod, and it takes longer. With Premium everything downloads by itself.</span></p></details>
       <details><summary><span class="en" data-e="faq.06">Windows says "Unknown publisher". Is it safe?</span></summary><p><span class="en" data-e="faq.07">The launcher isn't code-signed yet. The code is open on GitHub, the file is built from it on GitHub's servers, and you can check it against the checksum. Click "More info" → "Run anyway".</span></p></details>
-      <details><summary><span class="en" data-e="faq.08">What does the launcher do to my game folder?</span></summary><p><span class="en" data-e="faq.09">The modlist goes into its own folder. The launcher puts only 6 small loader files into the game folder, because the mods need them to run. "Restore clean game" removes them.</span></p></details>
+      <details><summary><span class="en" data-e="faq.08">What does the launcher do to my game folder?</span></summary><p><span class="en" data-e="faq.09">The modlist goes into its own folder. The launcher puts only a few small loader files into the game folder (6 for Cyberpunk 2077, 2 for Starfield and Fallout 4), because the mods need them to run. "Restore clean game" removes them.</span></p></details>
       <details><summary><span class="en" data-e="faq.10">What if it doesn't start?</span></summary><p><span class="en" data-e="faq.11">Press "Make an error report" in the launcher and send it to <a href="https://t.me/FunkyLauncherBot">@FunkyLauncherBot</a> — we'll sort it out.</span></p></details>
-      <details><summary><span class="en" data-e="faq.12">Which games are next?</span></summary><p><span class="en" data-e="faq.13">Starfield is in progress, The Witcher 3 and RDR2 are planned.</span></p></details>
+      <details><summary><span class="en" data-e="faq.12">Which games are next?</span></summary><p><span class="en" data-e="faq.13">Neon Nights (Cyberpunk 2077), Nova Nights (Starfield) and Atomic Nights (Fallout 4) are out, GTA V Enhanced is in progress.</span></p></details>
     </div>
   </section>
 
@@ -350,5 +364,6 @@ footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; o
   document.querySelectorAll('.rv').forEach(function (el) { io ? io.observe(el) : el.classList.add('on'); });
 })();
 </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0bbf324ca83440c693bdeb9b1338dcdc"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
