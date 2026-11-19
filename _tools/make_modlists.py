@@ -165,6 +165,7 @@ def page(lang, slug, name, game, img, short, body) -> str:
   <h2>{e(u['other'])}</h2>
   <p class="others">{others}</p>
 </main>
+<script src="/assets/support-chat.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "0bbf324ca83440c693bdeb9b1338dcdc"}}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
