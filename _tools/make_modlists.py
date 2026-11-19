@@ -55,7 +55,7 @@ def parse(md: str) -> dict:
         if not m:
             sys.exit(f"section {head} not found")
         body = m.group(1)
-        short = re.search(r"^\*\*RU:\*\*(.+)$.*?^\*\*EN:\*\*(.+)$", body, re.M | re.S)
+        short = re.search(r"^\*\*RU:\*\*([^\n]+)$.*?^\*\*EN:\*\*([^\n]+)$", body, re.M | re.S)
         ru = re.search(r"^## Полное описание — RU\s*$(.*?)(?=^## )", body, re.M | re.S)
         en = re.search(r"^## Full description — EN\s*$(.*?)(?=^---|\Z)", body, re.M | re.S)
         out[head] = {"ru": (clean(short.group(1)), ru.group(1)), "en": (clean(short.group(2)), en.group(1))}
