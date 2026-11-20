@@ -123,6 +123,18 @@ nav a:hover { color: var(--text); }
 .ml.next { grid-column: 1 / -1; min-height: 0; flex-direction: row; flex-wrap: wrap; align-items: center; gap: .5rem 1.2rem; }
 .ml.next .t { font-size: 1.5rem; }
 .ml.next p { flex: 1 1 22rem; margin: 0; }
+.lists > .ru { grid-column: 1 / -1; }
+.ml.tr { min-height: 0; border-color: rgba(122,232,255,.45); display: grid; grid-template-columns: 1fr minmax(15rem, 19rem); grid-template-areas: "t s" "b s"; gap: .6rem 2.5rem; align-items: start; }
+.ml.tr .t { font-size: 1.6rem; grid-area: t; }
+.ml.tr .tb { grid-area: b; display: flex; flex-direction: column; gap: .5rem; }
+.ml.tr p { max-width: 75ch; margin: 0; }
+.ml.tr .fine { font-size: .8rem; opacity: .75; margin-top: .4rem; }
+.ml.tr .stats { grid-area: s; display: flex; flex-direction: column; gap: 1rem; align-self: center; }
+.ml.tr .stat { border: 1px solid rgba(255,63,210,.45); border-radius: 14px; padding: 1rem 1.2rem; background: rgba(0,0,0,.25); }
+.ml.tr .stat .n { display: inline-block; font-family: var(--head); font-style: italic; font-weight: 800; font-size: 2.6rem; line-height: 1.05; white-space: nowrap; }
+.ml.tr .stat .c { display: block; color: var(--cyan); font-size: .9rem; font-weight: 600; }
+.ml.tr .stat .l { display: block; color: var(--muted); font-size: .85rem; margin-bottom: .2rem; }
+@media (max-width: 760px) { .ml.tr { grid-template-columns: 1fr; grid-template-areas: "t" "s" "b"; gap: .8rem; } .ml.tr .stats { flex-direction: row; } .ml.tr .stat { flex: 1 1 0; padding: .8rem .9rem; } .ml.tr .stat .n { font-size: 1.7rem; } .ml.tr .stat .c { font-size: .8rem; } }
 @media (max-width: 900px) { .lists { grid-template-columns: 1fr; } }
 
 /* tools */
@@ -260,6 +272,22 @@ footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; o
         <span class="chip soon"><span class="ru" data-e="lists.05">В работе</span><span class="en" data-e="lists.05">In progress</span></span>
         <div class="t">GTA V Enhanced</div>
         <p><span class="ru" data-e="lists.08">Следующая сборка. Какую игру собрать после неё — решаем вместе в <a href="https://t.me/+TMzeOE08BoxlMTUy">Telegram</a>.</span><span class="en" data-e="lists.08">The next modlist. Which game comes after it — we decide together with the community.</span></p>
+      </div>
+      <div class="ru" id="translate">
+        <div class="ml tr rv">
+          <div class="t">Мы сами переводим моды</div>
+          <div class="stats">
+            <div class="stat"><span class="l">Neon Nights</span><span class="n grad">3&nbsp;500+</span><span class="c">названий на русском</span></div>
+            <div class="stat"><span class="l">Atomic Nights</span><span class="n grad">11&nbsp;000+</span><span class="c">названий на русском</span></div>
+          </div>
+          <div class="tb">
+          <p>В русской версии наших сборок названия из модов переведены на русский: больше 3&nbsp;500 в Neon Nights и больше 11&nbsp;000 в Atomic Nights. Это предметы, оружие, броня, модификации, имена персонажей, помещения и подписи на кнопках.</p>
+          <p>Переводим моды, не игру, и только названия: описания, диалоги и цели заданий остаются на языке автора мода. Перевод автоматический, с помощью ИИ, возможны ошибки. Бесплатно. Файлы авторов не меняются — перевод собирается отдельным патчем на твоём компьютере.</p>
+          <p>Как получить: обнови Funky Launcher, выбери русскую версию сборки (если сборка уже стоит — «Обновить»).</p>
+          <p>Нашёл смешной перевод, непонятные значки вместо букв или ошибку — пришли снимок через «Сообщить о недочёте» на странице сборки в лаунчере: стараемся исправить в обновлениях.</p>
+          <p class="fine">Фанатские сборки, не одобрены и не поддерживаются CD PROJEKT RED, Bethesda Game Studios, Bethesda Softworks и ZeniMax Media. Cyberpunk 2077 — товарный знак CD PROJEKT RED S.A.; Fallout — товарный знак Bethesda Softworks LLC.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
