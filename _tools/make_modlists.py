@@ -35,7 +35,7 @@ UI = {
 }
 
 NOTE = re.compile(r"\s*\[(?:ДОПОЛНИТЬ|УТОЧНИТЬ)[^\]]*\]")
-URL = re.compile(r"(https?://[^\s<)]+)")
+URL = re.compile(r"(https?://[^\s<)]+?)(?=[.,;:!?»]*(?:\s|<|\)|$))")  # trailing punctuation is not part of the link
 
 
 def clean(s: str) -> str:
