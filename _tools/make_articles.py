@@ -100,6 +100,18 @@ def render(text: str):
     return "\n".join(out), faq
 
 
+TM = {  # slug word -> (RU, EN) trademark line
+    "cyberpunk": ("Cyberpunk 2077 — товарный знак CD PROJEKT S.A.", "Cyberpunk 2077 is a trademark of CD PROJEKT S.A."),
+    "starfield": ("Starfield — товарный знак Bethesda Softworks LLC.", "Starfield is a trademark of Bethesda Softworks LLC."),
+    "fallout": ("Fallout — товарный знак Bethesda Softworks LLC.", "Fallout is a trademark of Bethesda Softworks LLC."),
+}
+
+
+def tm(lang, art) -> str:
+    lines = [v[0 if lang == "ru" else 1] for k, v in TM.items() if k in art["slug"]["ru"]]
+    return html.escape(" " + " ".join(lines)) if lines else ""
+
+
 def page(lang, art):
     u, e = UI[lang], html.escape
     a = art[lang]
@@ -167,7 +179,7 @@ h3 {{ font-size: 1.05rem; margin: 1.3rem 0 .3rem; }}
 {cta}
   <h2>{e(u['lists'])}</h2>
   <p class="others">{lists}</p>
-  <p class="small">{e(u['fine'])}</p>
+  <p class="small">{e(u['fine'])}{tm(lang, art)}</p>
 </main>
 <script src="/assets/support-chat.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "0bbf324ca83440c693bdeb9b1338dcdc"}}'></script><!-- End Cloudflare Web Analytics -->

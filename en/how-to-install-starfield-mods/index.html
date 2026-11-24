@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to install Starfield mods | Funky Launcher</title>
+<meta name="description" content="How to install a mod pack for Starfield 1.16.244 with a free launcher: what you need, Nexus login, disk space and how to restore a clean game.">
+<link rel="canonical" href="https://funkylauncher.com/en/how-to-install-starfield-mods/">
+<link rel="alternate" hreflang="ru" href="https://funkylauncher.com/kak-ustanovit-mody-starfield/">
+<link rel="alternate" hreflang="en" href="https://funkylauncher.com/en/how-to-install-starfield-mods/">
+<link rel="alternate" hreflang="x-default" href="https://funkylauncher.com/en/how-to-install-starfield-mods/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to install Starfield mods">
+<meta property="og:description" content="How to install a mod pack for Starfield 1.16.244 with a free launcher: what you need, Nexus login, disk space and how to restore a clean game.">
+<meta property="og:url" content="https://funkylauncher.com/en/how-to-install-starfield-mods/">
+<meta property="og:image" content="https://funkylauncher.com/assets/og.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to install Starfield mods", "description": "How to install a mod pack for Starfield 1.16.244 with a free launcher: what you need, Nexus login, disk space and how to restore a clean game.", "inLanguage": "en", "url": "https://funkylauncher.com/en/how-to-install-starfield-mods/", "mainEntityOfPage": "https://funkylauncher.com/en/how-to-install-starfield-mods/", "image": "https://funkylauncher.com/assets/og.jpg", "author": {"@type": "Organization", "name": "FunkyPlay", "url": "https://funkylauncher.com/"}, "publisher": {"@type": "Organization", "name": "FunkyPlay", "url": "https://funkylauncher.com/", "logo": {"@type": "ImageObject", "url": "https://funkylauncher.com/assets/icon.png"}}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need Nexus Premium?", "acceptedAnswer": {"@type": "Answer", "text": "No, a free account is enough. Without Premium you press \"Slow download\" once for each mod, which takes roughly an hour or two. With Premium everything downloads by itself."}}, {"@type": "Question", "name": "Which Starfield version do I need?", "acceptedAnswer": {"@type": "Answer", "text": "1.16.244 with the Shattered Space expansion. The modlist is made for it: if the game updated, wait for a new modlist version in the launcher."}}, {"@type": "Question", "name": "Can I get back a clean game?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The \"Restore clean game\" button removes the SFSE loader from the game folder. The mods and the modlist stay in their own folder."}}]}
+</script>
+<style>
+:root { --bg: #07070d; --card: #11111c; --line: #24243a; --text: #fff; --muted: #b3b3c6; --pink: #ff3fd2; --cyan: #7ae8ff; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { min-height: 100vh; color: var(--text); font: 1.02rem/1.6 "Segoe UI", system-ui, sans-serif; padding: 1.5rem 16px 3rem;
+  background:
+    radial-gradient(60vw 50vh at 100% 0%, rgba(255,63,210,.18), transparent 70%),
+    radial-gradient(50vw 50vh at 0% 100%, rgba(122,232,255,.13), transparent 70%),
+    var(--bg); background-attachment: fixed; }
+main { max-width: 52rem; margin: 0 auto; }
+header { display: flex; align-items: center; gap: .7rem; margin-bottom: 2rem; }
+header img { width: 34px; height: 34px; }
+a { color: var(--cyan); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.badge { display: inline-block; padding: .25rem .7rem; border: 1px solid var(--cyan); border-radius: 999px; color: var(--cyan);
+  font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1rem; }
+h1 { font: 700 clamp(2.2rem, 1.4rem + 4vw, 3.6rem)/1 "Bahnschrift", "Arial Narrow", sans-serif; font-stretch: 75%;
+  text-transform: uppercase; transform: skewX(-9deg); margin-bottom: .5rem; }
+h1 span { background: linear-gradient(90deg, var(--pink), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
+.sub { color: var(--muted); font-size: 1.1rem; margin-bottom: 1.2rem; }
+h2 { font-size: 1.25rem; margin: 1.8rem 0 .6rem; }
+.pic { width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); margin: 1.2rem 0 .5rem; }
+p, li { color: var(--muted); max-width: 72ch; margin: .5rem 0; }
+p b, li b { color: var(--text); }
+ul { margin-left: 1.3rem; }
+.cta { margin: 1.4rem 0; }
+.btn { display: inline-block; margin: .3rem 0 .6rem; padding: 1rem 1.8rem; border-radius: 12px; background: var(--pink); color: #14000f;
+  font-weight: 800; text-decoration: none; box-shadow: 0 10px 40px -10px rgba(255,63,210,.8); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+.free { font-size: .92rem; margin-top: 0; }
+.others { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; margin-top: .4rem; }
+.small { font-size: .8rem; opacity: .8; margin-top: 2.5rem; }
+h1 { font-size: clamp(1.7rem, 1.2rem + 2.4vw, 2.6rem); line-height: 1.1; }
+h3 { font-size: 1.05rem; margin: 1.3rem 0 .3rem; }
+</style>
+</head>
+<body>
+<main>
+  <header><a href="/en/"><img src="/assets/icon.png" alt="Funky Launcher"></a><a href="/en/">← funkylauncher.com</a>
+  <span style="margin-left:auto"><a href="/kak-ustanovit-mody-starfield/" lang="ru">RU</a></span></header>
+  <p class="sub">Funky Launcher — help</p>
+  <h1><span>How to install Starfield mods</span></h1>
+  <p>The easiest way to install lots of mods for Starfield is a ready modlist and the free Funky Launcher: it checks your game, downloads the mods and builds them in a separate folder.</p>
+  <h2>What you need</h2>
+  <ul>
+    <li>Starfield version 1.16.244 with the Shattered Space expansion.</li>
+    <li>A Nexus Mods account. A free one is enough.</li>
+    <li>About 50 GB of free disk space for the modlist and mod archives, plus the game itself. HD planets are an optional add-on with a separate checkbox and take about 21 GB more.</li>
+    <li>Windows 10 or 11 (64-bit).</li>
+  </ul>
+  <h2>How to install the Nova Nights modlist</h2>
+  <ul>
+    <li>Download the launcher from <a href="https://funkylauncher.com/en" rel="noopener">https://funkylauncher.com/en</a> and start it with a normal double-click, not "Run as administrator".</li>
+    <li>Pick the Nova Nights modlist.</li>
+    <li>The launcher finds the game by itself. If it doesn't, press "Show the game folder" and choose the folder with the game. Choose a separate empty folder for the modlist, not the game folder.</li>
+    <li>Press INSTALL. The launcher checks the game and shows the "Nexus login — 3 steps" window: Wabbajack opens, press Settings, then Log in on the Nexus Mods line and confirm access in your browser. The launcher notices the login by itself.</li>
+    <li>Wait for the download. With Nexus Premium files download by themselves. Without Premium you press "Slow download" once for each mod and the launcher walks you through it; it takes an hour or two, and you can close the window and continue later.</li>
+    <li>When it's done, press PLAY. Start the game only with this button.</li>
+  </ul>
+  <h2>What the launcher does to your game</h2>
+  <p>The mods live in their own folder. The launcher puts only the SFSE loader into the game folder: 2 files. The "Restore clean game" button removes it.</p>
+  <h2>Good to know</h2>
+  <ul>
+    <li>The modlist is made for version 1.16.244. Turn off the game's auto-update and don't update it until a new modlist version appears in the launcher.</li>
+    <li>All mods are downloaded from their authors' pages on Nexus Mods; we don't re-upload them. Please endorse the authors.</li>
+  </ul>
+  <h3>Do I need Nexus Premium?</h3>
+  <p>No, a free account is enough. Without Premium you press "Slow download" once for each mod, which takes roughly an hour or two. With Premium everything downloads by itself.</p>
+  <h3>Which Starfield version do I need?</h3>
+  <p>1.16.244 with the Shattered Space expansion. The modlist is made for it: if the game updated, wait for a new modlist version in the launcher.</p>
+  <h3>Can I get back a clean game?</h3>
+  <p>Yes. The "Restore clean game" button removes the SFSE loader from the game folder. The mods and the modlist stay in their own folder.</p>
+  <div class="cta"><a class="btn" href="/en/download/">Download Funky Launcher</a>
+  <p class="free">The launcher is free; pick the modlist in its library.</p></div>
+  <h2>Modlists</h2>
+  <p class="others"><a href="/en/neon-nights/">Neon Nights</a> <a href="/en/nova-nights/">Nova Nights</a> <a href="/en/atomic-nights/">Atomic Nights</a></p>
+  <p class="small">Funky Launcher is an independent, unofficial project. It is not affiliated with or endorsed by any game publisher or developer, or by Nexus Mods or Wabbajack. All game names and trademarks belong to their respective owners. Starfield is a trademark of Bethesda Softworks LLC.</p>
+</main>
+<script src="/assets/support-chat.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0bbf324ca83440c693bdeb9b1338dcdc"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

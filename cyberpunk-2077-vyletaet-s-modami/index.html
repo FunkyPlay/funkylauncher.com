@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyberpunk 2077 вылетает с модами: что делать | Funky Launcher</title>
+<meta name="description" content="Cyberpunk 2077 вылетает или не запускается с модами: частые причины, что проверить по шагам и как собрать отчёт для поддержки.">
+<link rel="canonical" href="https://funkylauncher.com/cyberpunk-2077-vyletaet-s-modami/">
+<link rel="alternate" hreflang="ru" href="https://funkylauncher.com/cyberpunk-2077-vyletaet-s-modami/">
+<link rel="alternate" hreflang="en" href="https://funkylauncher.com/en/cyberpunk-2077-crashing-with-mods/">
+<link rel="alternate" hreflang="x-default" href="https://funkylauncher.com/en/cyberpunk-2077-crashing-with-mods/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cyberpunk 2077 вылетает с модами: что делать">
+<meta property="og:description" content="Cyberpunk 2077 вылетает или не запускается с модами: частые причины, что проверить по шагам и как собрать отчёт для поддержки.">
+<meta property="og:url" content="https://funkylauncher.com/cyberpunk-2077-vyletaet-s-modami/">
+<meta property="og:image" content="https://funkylauncher.com/assets/og.jpg">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Cyberpunk 2077 вылетает с модами: что делать", "description": "Cyberpunk 2077 вылетает или не запускается с модами: частые причины, что проверить по шагам и как собрать отчёт для поддержки.", "inLanguage": "ru", "url": "https://funkylauncher.com/cyberpunk-2077-vyletaet-s-modami/", "mainEntityOfPage": "https://funkylauncher.com/cyberpunk-2077-vyletaet-s-modami/", "image": "https://funkylauncher.com/assets/og.jpg", "author": {"@type": "Organization", "name": "FunkyPlay", "url": "https://funkylauncher.com/"}, "publisher": {"@type": "Organization", "name": "FunkyPlay", "url": "https://funkylauncher.com/", "logo": {"@type": "ImageObject", "url": "https://funkylauncher.com/assets/icon.png"}}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Игра вылетает сразу после запуска. С чего начать?", "acceptedAnswer": {"@type": "Answer", "text": "Проверьте версию игры (нужна 2.5 с Phantom Liberty), наличие REDmod и то, что вы запускаете игру кнопкой «ИГРАТЬ» в лаунчере. Затем «ПРОВЕРИТЬ ФАЙЛЫ» в разделе «Установка и проверка»."}}, {"@type": "Question", "name": "Игра вылетела после обновления игры. Что делать?", "acceptedAnswer": {"@type": "Answer", "text": "Моды рассчитаны на конкретную версию. Дождитесь новой версии сборки: она появится в лаунчере сама. Автообновление игры лучше выключить."}}, {"@type": "Question", "name": "Как отправить отчёт об ошибке?", "acceptedAnswer": {"@type": "Answer", "text": "На Главной нажмите «Собрать отчёт об ошибке», архив сохранится на рабочем столе. Пришлите его в чат поддержки в лаунчере и опишите, что происходит после «ИГРАТЬ»."}}]}
+</script>
+<style>
+:root { --bg: #07070d; --card: #11111c; --line: #24243a; --text: #fff; --muted: #b3b3c6; --pink: #ff3fd2; --cyan: #7ae8ff; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { min-height: 100vh; color: var(--text); font: 1.02rem/1.6 "Segoe UI", system-ui, sans-serif; padding: 1.5rem 16px 3rem;
+  background:
+    radial-gradient(60vw 50vh at 100% 0%, rgba(255,63,210,.18), transparent 70%),
+    radial-gradient(50vw 50vh at 0% 100%, rgba(122,232,255,.13), transparent 70%),
+    var(--bg); background-attachment: fixed; }
+main { max-width: 52rem; margin: 0 auto; }
+header { display: flex; align-items: center; gap: .7rem; margin-bottom: 2rem; }
+header img { width: 34px; height: 34px; }
+a { color: var(--cyan); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.badge { display: inline-block; padding: .25rem .7rem; border: 1px solid var(--cyan); border-radius: 999px; color: var(--cyan);
+  font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1rem; }
+h1 { font: 700 clamp(2.2rem, 1.4rem + 4vw, 3.6rem)/1 "Bahnschrift", "Arial Narrow", sans-serif; font-stretch: 75%;
+  text-transform: uppercase; transform: skewX(-9deg); margin-bottom: .5rem; }
+h1 span { background: linear-gradient(90deg, var(--pink), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
+.sub { color: var(--muted); font-size: 1.1rem; margin-bottom: 1.2rem; }
+h2 { font-size: 1.25rem; margin: 1.8rem 0 .6rem; }
+.pic { width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); margin: 1.2rem 0 .5rem; }
+p, li { color: var(--muted); max-width: 72ch; margin: .5rem 0; }
+p b, li b { color: var(--text); }
+ul { margin-left: 1.3rem; }
+.cta { margin: 1.4rem 0; }
+.btn { display: inline-block; margin: .3rem 0 .6rem; padding: 1rem 1.8rem; border-radius: 12px; background: var(--pink); color: #14000f;
+  font-weight: 800; text-decoration: none; box-shadow: 0 10px 40px -10px rgba(255,63,210,.8); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+.free { font-size: .92rem; margin-top: 0; }
+.others { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; margin-top: .4rem; }
+.small { font-size: .8rem; opacity: .8; margin-top: 2.5rem; }
+h1 { font-size: clamp(1.7rem, 1.2rem + 2.4vw, 2.6rem); line-height: 1.1; }
+h3 { font-size: 1.05rem; margin: 1.3rem 0 .3rem; }
+</style>
+</head>
+<body>
+<main>
+  <header><a href="/"><img src="/assets/icon.png" alt="Funky Launcher"></a><a href="/">← funkylauncher.com</a>
+  <span style="margin-left:auto"><a href="/en/cyberpunk-2077-crashing-with-mods/" lang="en">EN</a></span></header>
+  <p class="sub">Funky Launcher — помощь</p>
+  <h1><span>Cyberpunk 2077 вылетает с модами: что делать</span></h1>
+  <p>Если Cyberpunk 2077 вылетает или не запускается после установки модов, чаще всего дело в одном из нескольких простых пунктов. Пройдите их по порядку — обычно этого хватает.</p>
+  <h2>Проверьте по порядку</h2>
+  <ul>
+    <li>Версия игры. Моды сделаны под конкретную версию, у сборки Neon Nights это 2.5 с Phantom Liberty. Если игра обновилась, моды часто перестают работать. Выключите автообновление и не обновляйте игру, пока не вышла новая версия сборки.</li>
+    <li>REDmod. Нужно бесплатное дополнение REDmod: после установки в папке игры должен появиться файл tools\redmod\bin\redMod.exe. Без него моды не загрузятся, а игра может не запуститься.</li>
+    <li>Запуск. Запускайте игру только кнопкой «ИГРАТЬ» в Funky Launcher. Если запустить её ярлыком, моды не загрузятся, а оставшиеся в папке игры файлы-загрузчики могут сломать запуск.</li>
+    <li>Файлы игры. В лаунчере откройте «Установка и проверка» → «ПРОВЕРИТЬ ФАЙЛЫ». Если файлы игры отличаются от нужной версии, лаунчер об этом скажет.</li>
+    <li>Антивирус. Он мог удалить или заблокировать файлы загрузчиков (version.dll, winmm.dll, RED4ext). Если окно ошибки называет эти файлы, нажмите «ПОЧИНИТЬ» или переустановите сборку через лаунчер.</li>
+    <li>Лаунчер и драйвер. Обновите лаунчер до последней версии и драйвер видеокарты.</li>
+  </ul>
+  <h2>Если не помогло</h2>
+  <p>Сразу после неудачного запуска на Главной нажмите «Собрать отчёт об ошибке»: архив появится на рабочем столе. Пришлите его в чат поддержки в лаунчере и опишите словами, что происходит: чёрный экран, окно ошибки (текст или снимок), игра закрывается сразу или на заставке. Это помогает найти причину намного быстрее.</p>
+  <h2>Как мы работаем с вылетами</h2>
+  <p>Мы каждый день разбираем обращения и отчёты игроков, обновляем моды и пишем свои исправления, чтобы с каждым обновлением сборка становилась стабильнее. Каждый присланный недочёт мы смотрим и стараемся исправить.</p>
+  <h3>Игра вылетает сразу после запуска. С чего начать?</h3>
+  <p>Проверьте версию игры (нужна 2.5 с Phantom Liberty), наличие REDmod и то, что вы запускаете игру кнопкой «ИГРАТЬ» в лаунчере. Затем «ПРОВЕРИТЬ ФАЙЛЫ» в разделе «Установка и проверка».</p>
+  <h3>Игра вылетела после обновления игры. Что делать?</h3>
+  <p>Моды рассчитаны на конкретную версию. Дождитесь новой версии сборки: она появится в лаунчере сама. Автообновление игры лучше выключить.</p>
+  <h3>Как отправить отчёт об ошибке?</h3>
+  <p>На Главной нажмите «Собрать отчёт об ошибке», архив сохранится на рабочем столе. Пришлите его в чат поддержки в лаунчере и опишите, что происходит после «ИГРАТЬ».</p>
+  <div class="cta"><a class="btn" href="/download/">Скачать Funky Launcher</a>
+  <p class="free">Лаунчер бесплатный, сборку выбираешь в его библиотеке.</p></div>
+  <h2>Сборки</h2>
+  <p class="others"><a href="/neon-nights/">Neon Nights</a> <a href="/nova-nights/">Nova Nights</a> <a href="/atomic-nights/">Atomic Nights</a></p>
+  <p class="small">Funky Launcher — независимый неофициальный проект. Он не связан с издателями и разработчиками игр, с Nexus Mods и Wabbajack и не одобрен ими. Названия игр и товарные знаки принадлежат их владельцам. Cyberpunk 2077 — товарный знак CD PROJEKT S.A.</p>
+</main>
+<script src="/assets/support-chat.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0bbf324ca83440c693bdeb9b1338dcdc"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
