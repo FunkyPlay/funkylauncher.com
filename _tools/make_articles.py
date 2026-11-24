@@ -74,7 +74,7 @@ def render(text: str):
     out, faq, ul, q = [], [], False, None
     for raw in text.splitlines():
         line = clean(raw)
-        if not line:
+        if not line or line.startswith("<!--"):  # notes for the Copywriter, never published
             continue
         if line.startswith("- "):
             if not ul:
