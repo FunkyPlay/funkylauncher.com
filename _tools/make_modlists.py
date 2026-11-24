@@ -117,6 +117,19 @@ ul { margin-left: 1.3rem; }
 .small { font-size: .8rem; opacity: .8; margin-top: 2.5rem; }"""
 
 
+def ld(lang, url, name, game, img, short) -> str:
+    import json
+    return json.dumps({
+        "@context": "https://schema.org", "@type": "SoftwareApplication",
+        "name": f"{name} ({game})", "url": url, "inLanguage": lang,
+        "description": short, "image": f"{SITE}/assets/{img}",
+        "applicationCategory": "GameApplication", "operatingSystem": "Windows 10, Windows 11",
+        "downloadUrl": f"{SITE}{UI[lang]['btn_href']}",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "isPartOf": {"@type": "SoftwareApplication", "name": "Funky Launcher", "url": SITE + UI[lang]["home"]},
+    }, ensure_ascii=False)
+
+
 def page(lang, slug, name, game, img, short, body) -> str:
     u, e = UI[lang], html.escape
     url = f"{SITE}{u['prefix']}{slug}/"
@@ -149,6 +162,9 @@ def page(lang, slug, name, game, img, short, body) -> str:
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{ld(lang, url, name, game, img, short)}
+</script>
 <style>
 {CSS}
 </style>
