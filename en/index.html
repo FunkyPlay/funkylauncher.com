@@ -176,6 +176,13 @@ details p { margin-top: .8rem; }
 /* final + footer */
 .final { text-align: center; }
 .final p { margin: 1.2rem auto 2.2rem; }
+.help { border-top: 1px solid var(--line); padding: 1.6rem 0; font-size: .95rem; }
+.help .in { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem .7rem; }
+.help .t { color: var(--muted); }
+.help a { color: var(--cyan); text-decoration: none; }
+.help a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.help .sep { color: var(--muted); opacity: .6; }
+@media (max-width: 760px) { .help .in { flex-direction: column; align-items: flex-start; gap: .55rem; } .help .sep { display: none; } }
 footer { border-top: 1px solid var(--line); padding: 2.5rem 0 3rem; color: var(--muted); font-size: .9rem; }
 footer .row { display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; }
 footer a { color: var(--muted); text-decoration: none; }
@@ -338,6 +345,16 @@ footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; o
     <a class="btn rv" href="/en/download/" data-h="download">⬇ <span class="en" data-e="final.03">Download free</span></a>
   </section>
 </main>
+
+<div class="help"><div class="wrap in">
+  <span class="t"><span class="en">Help:</span></span>
+  <span class="ru sep">·</span>
+  <span class="ru sep">·</span>
+  
+  <a class="en" href="/en/how-to-install-cyberpunk-2077-mods/">How to install Cyberpunk 2077 mods</a><span class="en sep">·</span>
+  <a class="en" href="/en/how-to-install-starfield-mods/">How to install Starfield mods</a><span class="en sep">·</span>
+  <a class="en" href="/en/cyberpunk-2077-crashing-with-mods/">If the game crashes with mods</a>
+</div></div>
 
 <footer>
   <div class="wrap row">
