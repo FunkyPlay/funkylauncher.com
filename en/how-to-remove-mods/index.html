@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to remove mods and restore a clean game | Funky Launcher</title>
+<meta name="description" content="How to remove mods from Cyberpunk 2077, Starfield or Fallout 4 and get a clean game back with a button in Funky Launcher: what it does and what stays on disk.">
+<link rel="canonical" href="https://funkylauncher.com/en/how-to-remove-mods/">
+<link rel="alternate" hreflang="ru" href="https://funkylauncher.com/kak-udalit-mody/">
+<link rel="alternate" hreflang="en" href="https://funkylauncher.com/en/how-to-remove-mods/">
+<link rel="alternate" hreflang="x-default" href="https://funkylauncher.com/en/how-to-remove-mods/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to remove mods and restore a clean game">
+<meta property="og:description" content="How to remove mods from Cyberpunk 2077, Starfield or Fallout 4 and get a clean game back with a button in Funky Launcher: what it does and what stays on disk.">
+<meta property="og:url" content="https://funkylauncher.com/en/how-to-remove-mods/">
+<meta property="og:image" content="https://funkylauncher.com/assets/og.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to remove mods and restore a clean game", "description": "How to remove mods from Cyberpunk 2077, Starfield or Fallout 4 and get a clean game back with a button in Funky Launcher: what it does and what stays on disk.", "inLanguage": "en", "url": "https://funkylauncher.com/en/how-to-remove-mods/", "mainEntityOfPage": "https://funkylauncher.com/en/how-to-remove-mods/", "image": "https://funkylauncher.com/assets/og.jpg", "author": {"@type": "Organization", "name": "FunkyPlay", "url": "https://funkylauncher.com/"}, "publisher": {"@type": "Organization", "name": "FunkyPlay", "url": "https://funkylauncher.com/", "logo": {"@type": "ImageObject", "url": "https://funkylauncher.com/assets/icon.png"}}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need to delete the game to remove mods?", "acceptedAnswer": {"@type": "Answer", "text": "No. The \"Restore clean game\" button is enough: it removes the loader files from the game folder."}}, {"@type": "Question", "name": "Will my mods disappear after I press the button?", "acceptedAnswer": {"@type": "Answer", "text": "No. The mods and the modlist stay in their own folder. The game simply starts without them."}}, {"@type": "Question", "name": "How do I remove just one mod?", "acceptedAnswer": {"@type": "Answer", "text": "The mods in a modlist are chosen to work together, so it is better not to remove single mods by hand: it may break the modlist. If a particular mod bothers you, write to the support chat in the launcher."}}, {"@type": "Question", "name": "What if the game doesn't start after restoring a clean game?", "acceptedAnswer": {"@type": "Answer", "text": "Open \"Install and verify\" in the launcher and press \"VERIFY FILES\". If that doesn't help, press \"Make an error report\" on Home and send it to the support chat."}}]}
+</script>
+<style>
+:root { --bg: #07070d; --card: #11111c; --line: #24243a; --text: #fff; --muted: #b3b3c6; --pink: #ff3fd2; --cyan: #7ae8ff; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { min-height: 100vh; color: var(--text); font: 1.02rem/1.6 "Segoe UI", system-ui, sans-serif; padding: 1.5rem 16px 3rem;
+  background:
+    radial-gradient(60vw 50vh at 100% 0%, rgba(255,63,210,.18), transparent 70%),
+    radial-gradient(50vw 50vh at 0% 100%, rgba(122,232,255,.13), transparent 70%),
+    var(--bg); background-attachment: fixed; }
+main { max-width: 52rem; margin: 0 auto; }
+header { display: flex; align-items: center; gap: .7rem; margin-bottom: 2rem; }
+header img { width: 34px; height: 34px; }
+a { color: var(--cyan); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.badge { display: inline-block; padding: .25rem .7rem; border: 1px solid var(--cyan); border-radius: 999px; color: var(--cyan);
+  font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1rem; }
+h1 { font: 700 clamp(2.2rem, 1.4rem + 4vw, 3.6rem)/1 "Bahnschrift", "Arial Narrow", sans-serif; font-stretch: 75%;
+  text-transform: uppercase; transform: skewX(-9deg); margin-bottom: .5rem; }
+h1 span { background: linear-gradient(90deg, var(--pink), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
+.sub { color: var(--muted); font-size: 1.1rem; margin-bottom: 1.2rem; }
+h2 { font-size: 1.25rem; margin: 1.8rem 0 .6rem; }
+.pic { width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); margin: 1.2rem 0 .5rem; }
+p, li { color: var(--muted); max-width: 72ch; margin: .5rem 0; }
+p b, li b { color: var(--text); }
+ul { margin-left: 1.3rem; }
+.cta { margin: 1.4rem 0; }
+.btn { display: inline-block; margin: .3rem 0 .6rem; padding: 1rem 1.8rem; border-radius: 12px; background: var(--pink); color: #14000f;
+  font-weight: 800; text-decoration: none; box-shadow: 0 10px 40px -10px rgba(255,63,210,.8); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+.free { font-size: .92rem; margin-top: 0; }
+.others { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; margin-top: .4rem; }
+.small { font-size: .8rem; opacity: .8; margin-top: 2.5rem; }
+h1 { font-size: clamp(1.7rem, 1.2rem + 2.4vw, 2.6rem); line-height: 1.1; }
+h3 { font-size: 1.05rem; margin: 1.3rem 0 .3rem; }
+</style>
+</head>
+<body>
+<main>
+  <header><a href="/en/"><img src="/assets/icon.png" alt="Funky Launcher"></a><a href="/en/">← funkylauncher.com</a>
+  <span style="margin-left:auto"><a href="/kak-udalit-mody/" lang="ru">RU</a></span></header>
+  <p class="sub">Funky Launcher — help</p>
+  <h1><span>How to remove mods and restore a clean game</span></h1>
+  <p>If you installed mods with Funky Launcher, getting a clean game back is simple: open the Library, find the installed modlist and press "Restore clean game". It works for all three games.</p>
+  <h2>What the button does</h2>
+  <ul>
+    <li>The mods live in a separate modlist folder, and the launcher puts only a few small loader files into the game folder. The "Restore clean game" button removes them from the game folder.</li>
+    <li>In Cyberpunk 2077 these are 6 small files (CET, RED4ext, redscript), in Starfield the SFSE loader (2 files), in Fallout 4 the F4SE loader (2 files).</li>
+    <li>The mods and the modlist themselves stay in their own folder: you can play the clean game as usual and come back to the mods later.</li>
+  </ul>
+  <h2>How to do it</h2>
+  <ul>
+    <li>Close the game.</li>
+    <li>Open Funky Launcher and go to the Library.</li>
+    <li>On the installed modlist press "Restore clean game".</li>
+    <li>Start the game with its regular shortcut: it is now without mods.</li>
+  </ul>
+  <h2>If you want to remove the modlist completely</h2>
+  <p>The modlist folder is separate: it is the folder you chose during installation. If you need to free up space, close the launcher and the game and delete that folder by hand. First press "Restore clean game", so that no loader files are left in the game folder. Before deleting, save the saves you need: for Starfield and Fallout 4 the modlist's saves are kept inside the modlist folder (the profiles folder, then saves); your regular game saves are not touched by the modlist. In Cyberpunk 2077 the saves are kept in the regular folder (Saved Games\CD Projekt Red\Cyberpunk 2077), and deleting the modlist folder does not affect them; only the mod settings, which live in the modlist folder, are lost. A save made with the modlist may load in the clean game with a warning or without the mods' items and clothes. Before deleting, copy your saves folder to a safe place.</p>
+  <h2>Good to know</h2>
+  <ul>
+    <li>You don't need to reinstall the game: the clean game comes back with the button in a few seconds.</li>
+    <li>If the game doesn't start afterwards or you want to check the files, open "Install and verify" in the launcher and press "VERIFY FILES".</li>
+    <li>Saves made with mods may not load in the clean game or may work with errors: it is better to start a new game or use a save made without mods.</li>
+  </ul>
+  <h3>Do I need to delete the game to remove mods?</h3>
+  <p>No. The "Restore clean game" button is enough: it removes the loader files from the game folder.</p>
+  <h3>Will my mods disappear after I press the button?</h3>
+  <p>No. The mods and the modlist stay in their own folder. The game simply starts without them.</p>
+  <h3>How do I remove just one mod?</h3>
+  <p>The mods in a modlist are chosen to work together, so it is better not to remove single mods by hand: it may break the modlist. If a particular mod bothers you, write to the support chat in the launcher.</p>
+  <h3>What if the game doesn&#x27;t start after restoring a clean game?</h3>
+  <p>Open "Install and verify" in the launcher and press "VERIFY FILES". If that doesn't help, press "Make an error report" on Home and send it to the support chat.</p>
+  <p>The modlists are unofficial, not approved or supported by CD PROJEKT RED, Bethesda Game Studios, Bethesda Softworks and ZeniMax Media. Cyberpunk 2077 is a trademark of CD PROJEKT S.A.; Fallout and Starfield are trademarks of Bethesda Softworks LLC. Mods belong to their authors.</p>
+  <div class="cta"><a class="btn" href="/en/download/">Download Funky Launcher</a>
+  <p class="free">The launcher is free; pick the modlist in its library.</p></div>
+  <h2>Modlists</h2>
+  <p class="others"><a href="/en/neon-nights/">Neon Nights</a> <a href="/en/nova-nights/">Nova Nights</a> <a href="/en/atomic-nights/">Atomic Nights</a></p>
+  <p class="small">Funky Launcher is an independent, unofficial project. It is not affiliated with or endorsed by any game publisher or developer, or by Nexus Mods or Wabbajack. All game names and trademarks belong to their respective owners.</p>
+</main>
+<script src="/assets/support-chat.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0bbf324ca83440c693bdeb9b1338dcdc"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как установить моды на Fallout 4 | Funky Launcher</title>
+<meta name="description" content="Как поставить сборку модов на Fallout 4 1.11.240 с бесплатным лаунчером: что нужно, вход в Nexus, сколько места и как вернуть чистую игру.">
+<link rel="canonical" href="https://funkylauncher.com/kak-ustanovit-mody-fallout-4/">
+<link rel="alternate" hreflang="ru" href="https://funkylauncher.com/kak-ustanovit-mody-fallout-4/">
+<link rel="alternate" hreflang="en" href="https://funkylauncher.com/en/how-to-install-fallout-4-mods/">
+<link rel="alternate" hreflang="x-default" href="https://funkylauncher.com/en/how-to-install-fallout-4-mods/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Как установить моды на Fallout 4">
+<meta property="og:description" content="Как поставить сборку модов на Fallout 4 1.11.240 с бесплатным лаунчером: что нужно, вход в Nexus, сколько места и как вернуть чистую игру.">
+<meta property="og:url" content="https://funkylauncher.com/kak-ustanovit-mody-fallout-4/">
+<meta property="og:image" content="https://funkylauncher.com/assets/og.jpg">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Как установить моды на Fallout 4", "description": "Как поставить сборку модов на Fallout 4 1.11.240 с бесплатным лаунчером: что нужно, вход в Nexus, сколько места и как вернуть чистую игру.", "inLanguage": "ru", "url": "https://funkylauncher.com/kak-ustanovit-mody-fallout-4/", "mainEntityOfPage": "https://funkylauncher.com/kak-ustanovit-mody-fallout-4/", "image": "https://funkylauncher.com/assets/og.jpg", "author": {"@type": "Organization", "name": "FunkyPlay", "url": "https://funkylauncher.com/"}, "publisher": {"@type": "Organization", "name": "FunkyPlay", "url": "https://funkylauncher.com/", "logo": {"@type": "ImageObject", "url": "https://funkylauncher.com/assets/icon.png"}}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Нужен ли Nexus Premium?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Бесплатного аккаунта Nexus хватает: без Premium у каждого мода один раз нажимается «Slow download», это занимает примерно час-два. С Premium всё скачивается само."}}, {"@type": "Question", "name": "Какая версия Fallout 4 нужна?", "acceptedAnswer": {"@type": "Answer", "text": "1.11.240 со всеми шестью дополнениями. Сборка сделана под неё: если игра обновилась или дополнений не хватает, лаунчер об этом скажет."}}, {"@type": "Question", "name": "Сколько нужно места?", "acceptedAnswer": {"@type": "Answer", "text": "Около 90 ГБ под сборку Atomic Nights вместе со скачанными файлами, плюс сама игра."}}, {"@type": "Question", "name": "Можно ли вернуть чистую игру?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Кнопка «Вернуть чистую игру» убирает файлы F4SE из папки игры. Моды и сборка остаются в своей папке."}}]}
+</script>
+<style>
+:root { --bg: #07070d; --card: #11111c; --line: #24243a; --text: #fff; --muted: #b3b3c6; --pink: #ff3fd2; --cyan: #7ae8ff; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { min-height: 100vh; color: var(--text); font: 1.02rem/1.6 "Segoe UI", system-ui, sans-serif; padding: 1.5rem 16px 3rem;
+  background:
+    radial-gradient(60vw 50vh at 100% 0%, rgba(255,63,210,.18), transparent 70%),
+    radial-gradient(50vw 50vh at 0% 100%, rgba(122,232,255,.13), transparent 70%),
+    var(--bg); background-attachment: fixed; }
+main { max-width: 52rem; margin: 0 auto; }
+header { display: flex; align-items: center; gap: .7rem; margin-bottom: 2rem; }
+header img { width: 34px; height: 34px; }
+a { color: var(--cyan); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.badge { display: inline-block; padding: .25rem .7rem; border: 1px solid var(--cyan); border-radius: 999px; color: var(--cyan);
+  font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1rem; }
+h1 { font: 700 clamp(2.2rem, 1.4rem + 4vw, 3.6rem)/1 "Bahnschrift", "Arial Narrow", sans-serif; font-stretch: 75%;
+  text-transform: uppercase; transform: skewX(-9deg); margin-bottom: .5rem; }
+h1 span { background: linear-gradient(90deg, var(--pink), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
+.sub { color: var(--muted); font-size: 1.1rem; margin-bottom: 1.2rem; }
+h2 { font-size: 1.25rem; margin: 1.8rem 0 .6rem; }
+.pic { width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); margin: 1.2rem 0 .5rem; }
+p, li { color: var(--muted); max-width: 72ch; margin: .5rem 0; }
+p b, li b { color: var(--text); }
+ul { margin-left: 1.3rem; }
+.cta { margin: 1.4rem 0; }
+.btn { display: inline-block; margin: .3rem 0 .6rem; padding: 1rem 1.8rem; border-radius: 12px; background: var(--pink); color: #14000f;
+  font-weight: 800; text-decoration: none; box-shadow: 0 10px 40px -10px rgba(255,63,210,.8); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+.free { font-size: .92rem; margin-top: 0; }
+.others { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; margin-top: .4rem; }
+.small { font-size: .8rem; opacity: .8; margin-top: 2.5rem; }
+h1 { font-size: clamp(1.7rem, 1.2rem + 2.4vw, 2.6rem); line-height: 1.1; }
+h3 { font-size: 1.05rem; margin: 1.3rem 0 .3rem; }
+</style>
+</head>
+<body>
+<main>
+  <header><a href="/"><img src="/assets/icon.png" alt="Funky Launcher"></a><a href="/">← funkylauncher.com</a>
+  <span style="margin-left:auto"><a href="/en/how-to-install-fallout-4-mods/" lang="en">EN</a></span></header>
+  <p class="sub">Funky Launcher — помощь</p>
+  <h1><span>Как установить моды на Fallout 4</span></h1>
+  <p>Самый простой способ поставить много модов на Fallout 4 — готовая сборка и бесплатный Funky Launcher: он проверяет игру, скачивает моды и собирает их в отдельной папке. Версия игры должна быть 1.11.240.</p>
+  <h2>Что понадобится</h2>
+  <ul>
+    <li>Fallout 4 версии 1.11.240 и все 6 дополнений: Automatron, Wasteland Workshop, Far Harbor, Contraptions Workshop, Vault-Tec Workshop и Nuka-World. Без них сборка не поставится, лаунчер это проверит.</li>
+    <li>Аккаунт Nexus Mods. Бесплатного хватает.</li>
+    <li>Около 90 ГБ свободного места под сборку и архивы модов плюс сама игра. Лучше SSD.</li>
+    <li>Оперативной памяти 8 ГБ, лучше 16 ГБ. Windows 10 или 11 (64-бит).</li>
+  </ul>
+  <h2>Как поставить сборку Atomic Nights</h2>
+  <ul>
+    <li>Скачайте лаунчер с <a href="https://funkylauncher.com/download" rel="noopener">https://funkylauncher.com/download</a> и запустите его обычным двойным щелчком, не «от имени администратора».</li>
+    <li>Выберите сборку Atomic Nights.</li>
+    <li>Лаунчер найдёт игру сам. Если не нашёл, нажмите «Указать папку игры» и выберите папку с игрой. Папку для сборки выберите отдельную и пустую, не ту, где лежит игра.</li>
+    <li>Нажмите «УСТАНОВИТЬ». Лаунчер проверит версию игры и дополнения и покажет окно «Вход в Nexus — 3 шага»: откроется Wabbajack, в нём нажмите Settings, затем в строке Nexus Mods — Log in и подтвердите доступ в браузере. Лаунчер сам заметит вход.</li>
+    <li>Дождитесь загрузки. С Nexus Premium файлы скачиваются сами. Без Premium у каждого мода один раз нажимается «Slow download», лаунчер ведёт по шагам; это занимает час-два. Окно можно закрыть и продолжить позже с того же места.</li>
+    <li>Когда лаунчер напишет, что всё готово, нажмите «ИГРАТЬ». Запускайте игру только этой кнопкой, а не ярлыком игры: иначе моды не загрузятся. Первый запуск идёт дольше обычного — подождите 2–3 минуты, пока загрузятся плагины.</li>
+  </ul>
+  <h2>Что лаунчер делает с вашей игрой</h2>
+  <p>Моды лежат в своей папке. В папку игры лаунчер кладёт только загрузчик F4SE: 2 файла. Кнопка «Вернуть чистую игру» их убирает. Сохранения сборки лежат отдельно от сохранений обычной игры — так задумано.</p>
+  <h2>Важно знать</h2>
+  <ul>
+    <li>Сборка рассчитана на версию игры 1.11.240. Выключите автообновление игры и не обновляйте её, пока в лаунчере не появится новая версия сборки.</li>
+    <li>Не обновляйте моды внутри сборки и не добавляйте свои: это может её сломать.</li>
+    <li>Сборка Atomic Nights ещё в тесте. Если что-то не работает, нажмите на главной «Собрать отчёт об ошибке» и пришлите его в чат поддержки в лаунчере.</li>
+    <li>Чужие моды мы не перезаливаем: все они скачиваются со страниц авторов на Nexus Mods. Две мелкие правки лаунчер вносит у вас на компьютере после скачивания; мы не перезаливаем и не раздаём файлы авторов. Поддержите авторов — поставьте им Endorse.</li>
+  </ul>
+  <h3>Нужен ли Nexus Premium?</h3>
+  <p>Нет. Бесплатного аккаунта Nexus хватает: без Premium у каждого мода один раз нажимается «Slow download», это занимает примерно час-два. С Premium всё скачивается само.</p>
+  <h3>Какая версия Fallout 4 нужна?</h3>
+  <p>1.11.240 со всеми шестью дополнениями. Сборка сделана под неё: если игра обновилась или дополнений не хватает, лаунчер об этом скажет.</p>
+  <h3>Сколько нужно места?</h3>
+  <p>Около 90 ГБ под сборку Atomic Nights вместе со скачанными файлами, плюс сама игра.</p>
+  <h3>Можно ли вернуть чистую игру?</h3>
+  <p>Да. Кнопка «Вернуть чистую игру» убирает файлы F4SE из папки игры. Моды и сборка остаются в своей папке.</p>
+  <p>Atomic Nights — неофициальная фанатская сборка модов, не одобрена и не поддерживается Bethesda Game Studios, Bethesda Softworks и ZeniMax Media. Fallout — товарный знак Bethesda Softworks LLC. Моды принадлежат их авторам.</p>
+  <div class="cta"><a class="btn" href="/download/">Скачать Funky Launcher</a>
+  <p class="free">Лаунчер бесплатный, сборку выбираешь в его библиотеке.</p></div>
+  <h2>Сборки</h2>
+  <p class="others"><a href="/neon-nights/">Neon Nights</a> <a href="/nova-nights/">Nova Nights</a> <a href="/atomic-nights/">Atomic Nights</a></p>
+  <p class="small">Funky Launcher — независимый неофициальный проект. Он не связан с издателями и разработчиками игр, с Nexus Mods и Wabbajack и не одобрен ими. Названия игр и товарные знаки принадлежат их владельцам.</p>
+</main>
+<script src="/assets/support-chat.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0bbf324ca83440c693bdeb9b1338dcdc"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

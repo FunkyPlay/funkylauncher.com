@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fallout 4 вылетает с модами: что делать | Funky Launcher</title>
+<meta name="description" content="Fallout 4 вылетает или не запускается с модами: ошибка 740, чёрный экран, частые причины, где лежит журнал вылета и как собрать отчёт.">
+<link rel="canonical" href="https://funkylauncher.com/fallout-4-vyletaet-s-modami/">
+<link rel="alternate" hreflang="ru" href="https://funkylauncher.com/fallout-4-vyletaet-s-modami/">
+<link rel="alternate" hreflang="en" href="https://funkylauncher.com/en/fallout-4-crashing-with-mods/">
+<link rel="alternate" hreflang="x-default" href="https://funkylauncher.com/en/fallout-4-crashing-with-mods/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fallout 4 вылетает с модами: что делать">
+<meta property="og:description" content="Fallout 4 вылетает или не запускается с модами: ошибка 740, чёрный экран, частые причины, где лежит журнал вылета и как собрать отчёт.">
+<meta property="og:url" content="https://funkylauncher.com/fallout-4-vyletaet-s-modami/">
+<meta property="og:image" content="https://funkylauncher.com/assets/og.jpg">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Fallout 4 вылетает с модами: что делать", "description": "Fallout 4 вылетает или не запускается с модами: ошибка 740, чёрный экран, частые причины, где лежит журнал вылета и как собрать отчёт.", "inLanguage": "ru", "url": "https://funkylauncher.com/fallout-4-vyletaet-s-modami/", "mainEntityOfPage": "https://funkylauncher.com/fallout-4-vyletaet-s-modami/", "image": "https://funkylauncher.com/assets/og.jpg", "author": {"@type": "Organization", "name": "FunkyPlay", "url": "https://funkylauncher.com/"}, "publisher": {"@type": "Organization", "name": "FunkyPlay", "url": "https://funkylauncher.com/", "logo": {"@type": "ImageObject", "url": "https://funkylauncher.com/assets/icon.png"}}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Игра вылетает сразу после запуска. С чего начать?", "acceptedAnswer": {"@type": "Answer", "text": "Проверьте версию игры (нужна 1.11.240), что установлены все 6 дополнений, и что вы запускаете игру кнопкой «ИГРАТЬ» в лаунчере. Затем «ПРОВЕРИТЬ ФАЙЛЫ» в разделе «Установка и проверка»."}}, {"@type": "Question", "name": "Что делать с ошибкой 740 или «run f4se_loader as administrator»?", "acceptedAnswer": {"@type": "Answer", "text": "Снять галочку «Запускать от имени администратора» в свойствах Fallout4.exe и f4se_loader.exe (вкладка «Совместимость»). Лаунчер от имени администратора тоже запускать не нужно."}}, {"@type": "Question", "name": "Игра вылетела после обновления игры. Что делать?", "acceptedAnswer": {"@type": "Answer", "text": "Моды рассчитаны на конкретную версию. Дождитесь новой версии сборки: она появится в лаунчере сама. Автообновление игры лучше выключить."}}, {"@type": "Question", "name": "Как отправить отчёт об ошибке?", "acceptedAnswer": {"@type": "Answer", "text": "На Главной нажмите «Собрать отчёт об ошибке», архив сохранится на рабочем столе. Пришлите его в чат поддержки в лаунчере вместе с журналом вылета crash-….log и опишите, что происходит после «ИГРАТЬ»."}}]}
+</script>
+<style>
+:root { --bg: #07070d; --card: #11111c; --line: #24243a; --text: #fff; --muted: #b3b3c6; --pink: #ff3fd2; --cyan: #7ae8ff; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { min-height: 100vh; color: var(--text); font: 1.02rem/1.6 "Segoe UI", system-ui, sans-serif; padding: 1.5rem 16px 3rem;
+  background:
+    radial-gradient(60vw 50vh at 100% 0%, rgba(255,63,210,.18), transparent 70%),
+    radial-gradient(50vw 50vh at 0% 100%, rgba(122,232,255,.13), transparent 70%),
+    var(--bg); background-attachment: fixed; }
+main { max-width: 52rem; margin: 0 auto; }
+header { display: flex; align-items: center; gap: .7rem; margin-bottom: 2rem; }
+header img { width: 34px; height: 34px; }
+a { color: var(--cyan); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.badge { display: inline-block; padding: .25rem .7rem; border: 1px solid var(--cyan); border-radius: 999px; color: var(--cyan);
+  font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1rem; }
+h1 { font: 700 clamp(2.2rem, 1.4rem + 4vw, 3.6rem)/1 "Bahnschrift", "Arial Narrow", sans-serif; font-stretch: 75%;
+  text-transform: uppercase; transform: skewX(-9deg); margin-bottom: .5rem; }
+h1 span { background: linear-gradient(90deg, var(--pink), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
+.sub { color: var(--muted); font-size: 1.1rem; margin-bottom: 1.2rem; }
+h2 { font-size: 1.25rem; margin: 1.8rem 0 .6rem; }
+.pic { width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); margin: 1.2rem 0 .5rem; }
+p, li { color: var(--muted); max-width: 72ch; margin: .5rem 0; }
+p b, li b { color: var(--text); }
+ul { margin-left: 1.3rem; }
+.cta { margin: 1.4rem 0; }
+.btn { display: inline-block; margin: .3rem 0 .6rem; padding: 1rem 1.8rem; border-radius: 12px; background: var(--pink); color: #14000f;
+  font-weight: 800; text-decoration: none; box-shadow: 0 10px 40px -10px rgba(255,63,210,.8); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+.free { font-size: .92rem; margin-top: 0; }
+.others { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; margin-top: .4rem; }
+.small { font-size: .8rem; opacity: .8; margin-top: 2.5rem; }
+h1 { font-size: clamp(1.7rem, 1.2rem + 2.4vw, 2.6rem); line-height: 1.1; }
+h3 { font-size: 1.05rem; margin: 1.3rem 0 .3rem; }
+</style>
+</head>
+<body>
+<main>
+  <header><a href="/"><img src="/assets/icon.png" alt="Funky Launcher"></a><a href="/">← funkylauncher.com</a>
+  <span style="margin-left:auto"><a href="/en/fallout-4-crashing-with-mods/" lang="en">EN</a></span></header>
+  <p class="sub">Funky Launcher — помощь</p>
+  <h1><span>Fallout 4 вылетает с модами: что делать</span></h1>
+  <p>Если Fallout 4 вылетает или не запускается после установки модов, чаще всего дело в одном из нескольких простых пунктов. Пройдите их по порядку — обычно этого хватает.</p>
+  <p>Сборка Atomic Nights ещё в тесте.</p>
+  <h2>Проверьте по порядку</h2>
+  <ul>
+    <li>Версия игры и дополнения. Сборка Atomic Nights сделана под Fallout 4 версии 1.11.240 и все 6 дополнений. Если версия другая (старая 1.10.163 или новая после обновления) или какого-то дополнения нет, сборка не запустится или будет вылетать. Выключите автообновление игры и не обновляйте её: после обновления загрузчик модов F4SE и многие моды перестают работать, пока не выйдет новая версия сборки.</li>
+    <li>Запуск. Запускайте игру только кнопкой «ИГРАТЬ» в Funky Launcher. Если запустить её ярлыком или напрямую, моды не загрузятся: не будет нового интерфейса и меню настроек модов.</li>
+    <li>Файлы игры. В лаунчере откройте «Установка и проверка» → «ПРОВЕРИТЬ ФАЙЛЫ». Это помогает, если установка не докачалась или файлы отличаются от нужной версии.</li>
+    <li>Ошибка 740 или «run f4se_loader as administrator». На файле Fallout4.exe стоит флаг «Запускать от имени администратора» (его ставят некоторые установщики игры). Нажмите правой кнопкой на Fallout4.exe и на f4se_loader.exe → «Свойства» → «Совместимость» и снимите галочку «Запускать от имени администратора». Если галочка серая — «Изменить параметры для всех пользователей». Сам лаунчер от администратора тоже не запускайте.</li>
+    <li>Чёрный экран после логотипов. Первый запуск со сборкой идёт дольше обычного: компилируются шейдеры, грузятся плагины. Подождите 2–3 минуты. Выключите оверлеи (Discord, MSI Afterburner, GeForce Experience). Если играете в окне без рамки на втором мониторе — переключитесь на основной.</li>
+    <li>Антивирус. Он мог удалить или заблокировать файл загрузчика f4se_loader.exe. Добавьте папку игры и папку сборки в исключения — только если вы скачали лаунчер с нашего сайта; антивирус целиком не отключайте — и нажмите «ПОЧИНИТЬ» или «ПРОВЕРИТЬ ФАЙЛЫ», чтобы файл вернулся.</li>
+    <li>Лаунчер и драйвер. Обновите лаунчер до последней версии и драйвер видеокарты.</li>
+    <li>Свои изменения. Не обновляйте моды внутри сборки, не добавляйте свои и не меняйте порядок загрузки: это ломает сборку. Не ставьте её поверх другой сборки модов: игра должна быть чистой, для этого в лаунчере есть «Вернуть чистую игру».</li>
+  </ul>
+  <h2>Если не помогло</h2>
+  <p>Сразу после неудачного запуска на Главной нажмите «Собрать отчёт об ошибке»: архив появится на рабочем столе. Пришлите его в чат поддержки в лаунчере и опишите словами, что происходит: чёрный экран, окно ошибки (текст или снимок), игра закрывается сразу или в одном и том же месте. Если игра вылетела в игре, приложите журнал вылета: файл crash-….log в папке Документы\My Games\Fallout4\F4SE — и сохранение перед вылетом. Это помогает найти причину намного быстрее. Отчёт, журнал и сохранение содержат имена файлов и пути; присылайте их только в чат поддержки лаунчера.</p>
+  <h2>Как мы работаем с вылетами</h2>
+  <p>Мы каждый день разбираем обращения и отчёты игроков, обновляем моды и пишем свои исправления, чтобы с каждым обновлением сборка становилась стабильнее.</p>
+  <h3>Игра вылетает сразу после запуска. С чего начать?</h3>
+  <p>Проверьте версию игры (нужна 1.11.240), что установлены все 6 дополнений, и что вы запускаете игру кнопкой «ИГРАТЬ» в лаунчере. Затем «ПРОВЕРИТЬ ФАЙЛЫ» в разделе «Установка и проверка».</p>
+  <h3>Что делать с ошибкой 740 или «run f4se_loader as administrator»?</h3>
+  <p>Снять галочку «Запускать от имени администратора» в свойствах Fallout4.exe и f4se_loader.exe (вкладка «Совместимость»). Лаунчер от имени администратора тоже запускать не нужно.</p>
+  <h3>Игра вылетела после обновления игры. Что делать?</h3>
+  <p>Моды рассчитаны на конкретную версию. Дождитесь новой версии сборки: она появится в лаунчере сама. Автообновление игры лучше выключить.</p>
+  <h3>Как отправить отчёт об ошибке?</h3>
+  <p>На Главной нажмите «Собрать отчёт об ошибке», архив сохранится на рабочем столе. Пришлите его в чат поддержки в лаунчере вместе с журналом вылета crash-….log и опишите, что происходит после «ИГРАТЬ».</p>
+  <p>Atomic Nights — неофициальная фанатская сборка модов, не одобрена и не поддерживается Bethesda Game Studios, Bethesda Softworks и ZeniMax Media. Fallout — товарный знак Bethesda Softworks LLC. Моды принадлежат их авторам.</p>
+  <div class="cta"><a class="btn" href="/download/">Скачать Funky Launcher</a>
+  <p class="free">Лаунчер бесплатный, сборку выбираешь в его библиотеке.</p></div>
+  <h2>Сборки</h2>
+  <p class="others"><a href="/neon-nights/">Neon Nights</a> <a href="/nova-nights/">Nova Nights</a> <a href="/atomic-nights/">Atomic Nights</a></p>
+  <p class="small">Funky Launcher — независимый неофициальный проект. Он не связан с издателями и разработчиками игр, с Nexus Mods и Wabbajack и не одобрен ими. Названия игр и товарные знаки принадлежат их владельцам.</p>
+</main>
+<script src="/assets/support-chat.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0bbf324ca83440c693bdeb9b1338dcdc"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

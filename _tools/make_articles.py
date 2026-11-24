@@ -108,6 +108,8 @@ TM = {  # slug word -> (RU, EN) trademark line
 
 
 def tm(lang, art) -> str:
+    if re.search(r"товарн\w* знак|trademark", art[lang]["text"], re.I):
+        return ""  # the text already has its own trademark line
     lines = [v[0 if lang == "ru" else 1] for k, v in TM.items() if k in art["slug"]["ru"]]
     return html.escape(" " + " ".join(lines)) if lines else ""
 

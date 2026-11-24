@@ -62,11 +62,11 @@ def block(all_=False):
     ru, en = links(COMMON, all_)
     common = ""
     if ru:
-        common += ('    <p class="hwc ru">Общее: ' + " · ".join(f'<a href="{h}">{html.escape(t)}</a>' for h, t in ru)
-                   + "</p>\n")
+        common += ('    <div class="ru"><p class="hwc">Общее: ' + " · ".join(f'<a href="{h}">{html.escape(t)}</a>' for h, t in ru)
+                   + "</p></div>\n")
     if en:
-        common += ('    <p class="hwc en">General: ' + " · ".join(f'<a href="{h}">{html.escape(t)}</a>' for h, t in en)
-                   + "</p>\n")
+        common += ('    <div class="en"><p class="hwc">General: ' + " · ".join(f'<a href="{h}">{html.escape(t)}</a>' for h, t in en)
+                   + "</p></div>\n")
     return ('  <section class="wrap" id="help">\n'
             '    <div class="kicker rv"><span class="ru">Помощь</span><span class="en">Help</span></div>\n'
             '    <h2 class="head rv"><span class="ru">Как установить <span class="grad">моды</span></span>'
