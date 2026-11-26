@@ -215,3 +215,5 @@ if __name__ == "__main__":
             write(rel, page(lang, slug, name, games[i], img, short, body))
     write("starfield/index.html", redirect("/nova-nights/"))
     write("en/starfield/index.html", redirect("/en/nova-nights/"))
+    import make_search_blocks  # search text (26.11) goes back onto the rebuilt pages
+    make_search_blocks.run()
