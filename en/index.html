@@ -161,12 +161,6 @@ nav a:hover { color: var(--text); }
 .trust span { color: var(--muted); font-size: .92rem; }
 @media (max-width: 900px) { .trust { grid-template-columns: 1fr 1fr; } }
 
-/* pro */
-.pro { border-radius: 22px; padding: clamp(1.8rem, 4vw, 3.4rem); background: radial-gradient(40rem 20rem at 100% 0, rgba(255,63,210,.18), transparent 70%), var(--card); border: 1px solid rgba(255,63,210,.4); display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; }
-.pro ul { list-style: none; display: grid; gap: .6rem; }
-.pro li { padding-left: 1.6rem; position: relative; color: #dcdcea; }
-.pro li::before { content: "✦"; position: absolute; left: 0; color: var(--pink); }
-@media (max-width: 900px) { .pro { grid-template-columns: 1fr; } }
 
 /* faq */
 details { border-bottom: 1px solid var(--line); padding: 1.2rem 0; }
@@ -216,7 +210,6 @@ footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; o
     <nav>
       <a href="#how"><span class="en" data-e="nav.01">How it works</span></a>
       <a href="#tools"><span class="en" data-e="nav.02">Tools</span></a>
-      <a href="#pro">Pro</a>
       <a href="#faq">FAQ</a>
       <a class="lang" href="/" hreflang="ru" lang="ru" id="lang">RU</a>
       <a class="btn small" href="/en/download/" data-h="download"><span class="en" data-e="nav.03">Download</span></a>
@@ -317,25 +310,13 @@ footer .unofficial { margin-top: 1.4rem; font-size: .78rem; line-height: 1.55; o
     </div>
   </section>
 
-  <!-- 6. offer: Pro -->
-  <section class="wrap" id="pro">
-    <div class="pro rv">
-      <div>
-        <div class="kicker">Funky Pro · <span class="en" data-e="pro.01">soon</span></div>
-        <h2 class="head"><span class="en" data-e="pro.02">More comfort — <span class="grad">for power users</span></span></h2>
-        <p><span class="en" data-e="pro.03">Modlists, installs and support are always free. Pro adds extra launcher features and helps support the project. The price will be announced at launch.</span></p>
-      </div>
-      
-      <ul class="en" data-e="pro.04"><li>Cloud save backup to your own Google Drive, OneDrive or Yandex Disk</li><li>Backups while you play and save slots per playthrough</li><li>Hotkey and automation for recording mode</li><li>Your own desktops with their own icons</li><li>Automatic vertical clips for Shorts and TikTok</li></ul>
-    </div>
-  </section>
 
   <!-- 7. FAQ -->
   <section class="wrap" id="faq">
     <div class="kicker rv">FAQ</div>
     <h2 class="head rv"><span class="en" data-e="faq.01">Frequently <span class="grad">asked</span></span></h2>
     <div class="rv">
-      <details><summary><span class="en" data-e="faq.02">Is it really free?</span></summary><p><span class="en" data-e="faq.03">Yes. The launcher, modlists and support are free. Only Pro, with its extra tools, will be paid — everything works without it.</span></p></details>
+      <details><summary><span class="en" data-e="faq.02">Is it really free?</span></summary><p><span class="en" data-e="faq.03">Yes. The launcher and all modlists are free, and so is support.</span></p></details>
       <details><summary><span class="en" data-e="faq.04">Do I need Nexus Premium?</span></summary><p><span class="en" data-e="faq.05">No. A free Nexus Mods account works — you press "Slow download" for each mod, and it takes longer. With Premium everything downloads by itself.</span></p></details>
       <details><summary><span class="en" data-e="faq.06">Windows says "Unknown publisher". Is it safe?</span></summary><p><span class="en" data-e="faq.07">The launcher isn't code-signed yet. The code is open on GitHub, the file is built from it on GitHub's servers, and you can check it against the checksum. Click "More info" → "Run anyway".</span></p></details>
       <details><summary><span class="en" data-e="faq.08">What does the launcher do to my game folder?</span></summary><p><span class="en" data-e="faq.09">The modlist goes into its own folder. The launcher puts only a few small loader files into the game folder (6 for Cyberpunk 2077, 2 for Starfield and Fallout 4), because the mods need them to run. "Restore clean game" removes them.</span></p></details>
